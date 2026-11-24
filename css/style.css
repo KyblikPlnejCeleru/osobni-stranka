@@ -65,6 +65,7 @@ p { margin-block: 0 1rem; }
 
 a {
   color: var(--barva-odkazu);
+  text-decoration: underline;
   text-underline-offset: 0.2em;
   transition: color 160ms ease, text-decoration-color 160ms ease;
 }
@@ -161,6 +162,7 @@ section { margin-block: 2rem 3rem; }
 .tlacitko {
   background-color: var(--barva-zdrazneni);
   color: var(--barva-tlacitko-textu);
+  text-decoration: none;
   border: 1px solid var(--barva-okraje);
   border-radius: 0.5rem;
   font-weight: 700;
