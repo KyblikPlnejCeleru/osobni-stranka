@@ -106,3 +106,4 @@ stavu *Nesplněno*.
 | --- | --- | --- |
 | 1 | Lighthouse (axe `color-contrast`, impact serious): tlačítko „Podívat se na moje projekty“ mělo v tmavém schématu světlý text `#f5f7fa` na žlutém pozadí `#ffd166`, kontrast pouze 1,34:1. | `14aeff7` |
 | 2 | Ruční kontrola kritéria 2.4.11 při 200 % zvětšení: lepivá hlavička přesahovala `scroll-padding-top: 8rem`, takže mohl být zakryt prvek se zaostřením. | `46dc041` |
+| 3 | Lighthouse: `<meta name="color-scheme">` byl v kostře nastaven pouze na `light`, takže v tmavém režimu systém nebarvil nativní ovládací prvky a posuvníky správně. | `36d8e8c` |
