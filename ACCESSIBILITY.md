@@ -16,19 +16,20 @@ bylo ve verzi 2.2 odstraněno, proto se nevyhodnocuje).
   Původní alert „Possible heading“ u loga byl opraven (viz nález 5), upozornění
   „Long alternative text“ a „Underlined text“ opravena v nálezu 9; zbylé
   informativní položky jsou seznamy funkcí a strukturálních prvků, nikoli chyby.
-- **Klávesnice**: reálně stisknut Tab 22×, navíc Shift+Tab a Enter. Pořadí fokusu:
-  skip link → logo → 7 položek navigace → 2 CTA v úvodu → 3 e-mailové odkazy
-  u projektů → „Poslat mi meme“ → e-mail → GitHub → „Napsat e-mail“ → 2 odkazy
-  v patičce. Fokus má viditelný 3px outline; skip link se po Enteru zaostří
-  na `<main>` (viz nález 6).
+- **Klávesnice**: reálně stisknut Tab 30×, navíc Shift+Tab a Enter. Pořadí fokusu:
+  skip link → logo → 9 položek navigace → 2 CTA v úvodu → 3 e-mailové odkazy
+  u projektů → „Poslat mi meme“ → 5 shrnutí FAQ → e-mail → GitHub → „Napsat e-mail“
+  → 3 odkazy v patičce. Fokus má viditelný 3px outline; skip link se po Enteru
+  zaostří na `<main>` (viz nález 6) a Enter na `<summary>` rozbaluje odpověď.
 - **Přiblížení a media rules**: zvětšení kořenového písma na 16 px, 32 px i 64 px
   (200 % a zátěžový ekvivalent 400 %) ověřeno bez vodorovného posuvníku, bez
-  překrytí fokusu a bez přetečení vnitřních prvků (viz nález 8). Původní zátěžový
-  test 400 % vedl k odebrání lepivé hlavičky (viz nález 7). Jednotlivé `@media` bloky
-  (`prefers-color-scheme`, `prefers-contrast`, `prefers-reduced-motion`,
-  `prefers-reduced-transparency`, `forced-colors` i jejich kombinace) byly
-  ověřeny kontrolou deklarací a výpočtem kontrastu; postup přímé emulace
-  v DevTools je popsán v `README.md`.
+  překrytí fokusu a bez přetečení vnitřních prvků – i se všemi pěti odpověďmi FAQ
+  rozbalenými (viz nález 8). Původní zátěžový test 400 % vedl k odebrání lepivé
+  hlavičky (viz nález 7). Jednotlivé `@media` bloky (`prefers-color-scheme`,
+  `prefers-contrast`, `prefers-reduced-motion`, `prefers-reduced-transparency`,
+  `forced-colors`, jejich kombinace a nový `@media print`) byly ověřeny kontrolou
+  deklarací v CSSOM a výpočtem kontrastu; tiskový styl zachovává text a odkazy.
+  Postup přímé emulace v DevTools je popsán v `README.md`.
 - **Čtečka obrazovky**: struktura (landmarky, nadpisy, seznamy, tabulka s `caption`
   a `scope`) byla ověřena pomocí accessibility stromu v DevTools. Přímý poslech
   s NVDA nebyl v tomto prostředí možný, proto je tato část doložena stromem
@@ -48,7 +49,7 @@ stavu *Nesplněno*.
 | 1.2.3 Audio Description or Media Alternative | A | Nevztahuje se | Stránka neobsahuje video. |
 | 1.2.4 Captions (Live) | AA | Nevztahuje se | Stránka neobsahuje živé vysílání. |
 | 1.2.5 Audio Description (Prerecorded) | AA | Nevztahuje se | Stránka neobsahuje video s audiostopou. |
-| 1.3.1 Info and Relationships | A | Splněno | `header`, `nav`, `main`, `section`, `footer`, seznamy, definition list statistik, časová osa, tabulka s `caption` a `th scope` a brainrot panely s `ul`. |
+| 1.3.1 Info and Relationships | A | Splněno | `header`, `nav`, `main`, 10 sekcí, `footer`, seznamy, definition listy statistik a auditních razítek, časová osa, tabulka s `caption` a `th scope`, nativní `details`/`summary` FAQ a brainrot panel s `ul`. |
 | 1.3.2 Meaningful Sequence | A | Splněno | Pořadí v DOM je stejné jako vizuální pořadí; obsah není přesouván pomocí CSS. |
 | 1.3.3 Sensory Characteristics | A | Splněno | Pokyny ani odkazy nespoléhají na barvu, tvar ani polohu. |
 | 1.3.4 Orientation | AA | Splněno | Rozvržení je tekuté, žádné uzamčení orientace. |
@@ -67,7 +68,7 @@ stavu *Nesplněno*.
 
 | Kritérium | Úroveň | Stav | Zdůvodnění |
 | --- | --- | --- | --- |
-| 2.1.1 Keyboard | A | Splněno | Všechny interakce jsou nativní odkazy; žádné JavaScriptové zástupce. |
+| 2.1.1 Keyboard | A | Splněno | Všechny interakce jsou nativní odkazy a `<details>`/`<summary>`; žádné JavaScriptové zástupce. |
 | 2.1.2 No Keyboard Trap | A | Splněno | Žádné modalní okno ani fokusová past; skip link umožňuje únik. |
 | 2.1.4 Character Key Shortcuts | A | Nevztahuje se | Žádné klávesové zkratky. |
 | 2.2.1 Timing Adjustable | A | Nevztahuje se | Žádné časové limity. |
@@ -77,8 +78,8 @@ stavu *Nesplněno*.
 | 2.4.2 Page Titled | A | Splněno | `<title>potok – student, který tvoří přístupný web</title>`. |
 | 2.4.3 Focus Order | A | Splněno | Pořadí Tab odpovídá logickému pořadí obsahu. |
 | 2.4.4 Link Purpose (In Context) | A | Splněno | Navigační i kontaktní odkazy mají výstižný text. |
-| 2.4.5 Multiple Ways | AA | Splněno | Hlavní navigace se 7 položkami, skip link, CTA v sekcích a odkazy v patičce. |
-| 2.4.6 Headings and Labels | AA | Splněno | Jeden `h1`, sedm sekcí `h2`, karty a kroky `h3`, navigace má `aria-label`. |
+| 2.4.5 Multiple Ways | AA | Splněno | Hlavní navigace s 9 položkami, skip link, CTA v sekcích, FAQ a odkazy v patičce. |
+| 2.4.6 Headings and Labels | AA | Splněno | Jeden `h1`, deset sekcí `h2`, karty a kroky `h3`, navigace má `aria-label`. |
 | 2.4.7 Focus Visible | AA | Splněno | `:focus-visible` = 3px outline s 3px offsetem; vynucené barvy používají `Highlight`. |
 | 2.4.11 Focus Not Obscured (Minimum) | AA | Splněno | Hlavička už není lepivá a `scroll-padding-top: 12rem`/`6rem` zajišťuje odstup (opravy `46dc041`, `ad5c47b`). |
 | 2.5.1 Pointer Gestures | A | Nevztahuje se | Žádné gesta ani multitouch. |

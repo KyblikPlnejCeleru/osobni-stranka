@@ -25,6 +25,8 @@
           <li><a href="#dovednosti">Dovednosti</a></li>
           <li><a href="#denik">Deník</a></li>
           <li><a href="#brainrot">Brainrot</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#audity">Audity</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -264,6 +266,64 @@
       </div>
     </section>
 
+    <section id="faq" aria-labelledby="faq-nadpis">
+      <h2 id="faq-nadpis">Časté otázky</h2>
+      <p>Krátké odpovědi na to, co se lidé ptají nejčastěji. Otázky se rozbalují klávesnicí.</p>
+      <div class="faq">
+        <details class="faq-polozka">
+          <summary>Proč řešíš přístupnost už u školního webu?</summary>
+          <p>Protože přístupnost není dekorace navíc, ale základ dobrého HTML. Když odkaz funguje s klávesnicí a text má kontrast, prospěje to každému.</p>
+        </details>
+        <details class="faq-polozka">
+          <summary>Funguje stránka bez JavaScriptu?</summary>
+          <p>Ano. Celý web je postavený na sémantickém HTML a CSS. Žádné skripty se nenačítají, takže interakce jako rozbalování FAQ zvládne sám prohlížeč.</p>
+        </details>
+        <details class="faq-polozka">
+          <summary>Co znamená „Sigeon Pex“?</summary>
+          <p>Je to moje interní označení pro režim, kdy se sémantika potká s internetovým chaosem. V praxi znamená: udělat věci pořádně a přitom si u toho hrát.</p>
+        </details>
+        <details class="faq-polozka">
+          <summary>Kde najdu zprávu o přístupnosti?</summary>
+          <p>V patičce je odkaz „Zpráva o přístupnosti“. Najdete v ní 55 kritérií WCAG 2.2 A/AA a devět konkrétních nálezů s hashi oprav.</p>
+        </details>
+        <details class="faq-polozka">
+          <summary>Půjde stránka vytisknout?</summary>
+          <p>Ano. Tiskový styl odstraní navigaci, tlačítka a dekorace, zachová text, nadpisy, tabulku i odkazy.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="audity" aria-labelledby="audity-nadpis">
+      <div class="audity-panel">
+        <div class="audity-text">
+          <p class="eyebrow">Razítka kvality</p>
+          <h2 id="audity-nadpis">Auditní razítka</h2>
+          <p>
+            Čísla nejsou samoúčelná. Každé z nich znamená konkrétní kontrolu,
+            kterou jsem na nasazené stránce reálně provedl.
+          </p>
+        </div>
+        <dl class="audity-mrize">
+          <div>
+            <dt>Lighthouse</dt>
+            <dd><strong>100 / 100 / 100</strong><span>A11y · Best Practices · SEO</span></dd>
+          </div>
+          <div>
+            <dt>WAVE</dt>
+            <dd><strong>0 / 0 / 0</strong><span>Errors · Contrast · Alerts</span></dd>
+          </div>
+          <div>
+            <dt>W3C HTML</dt>
+            <dd><strong>0 hlášek</strong><span>Bez chyb i varování</span></dd>
+          </div>
+          <div>
+            <dt>WCAG 2.2</dt>
+            <dd><strong>55 kritérií</strong><span>Úrovně A a AA, bez 4.1.1</span></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
     <section id="kontakt" aria-labelledby="kontakt-nadpis">
       <div class="kontakt-panel">
         <div>
@@ -287,6 +347,7 @@
     <p>© 2026 potok. Postaveno se sémantickým HTML a ohledem na WCAG 2.2 AA.</p>
     <p>
       <a href="ACCESSIBILITY.md">Zpráva o přístupnosti</a>
+      <a href="#audity">Audity</a>
       <a href="#hlavni">Nahoru ↑</a>
     </p>
   </footer>
