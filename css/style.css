@@ -131,12 +131,14 @@ main,
 .header-inner {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding-block: 0.5rem;
 }
 
 .logo {
   display: inline-flex;
+  flex: none;
   align-items: center;
   gap: 0.5rem;
   min-height: 2.75rem;
@@ -179,7 +181,7 @@ section { margin-block: 3rem 4rem; }
   gap: 1.75rem;
   overflow: hidden;
   margin-top: 1.5rem;
-  padding: clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(1rem, 4vw, 3rem);
   background-color: var(--barva-hero);
   border: 1px solid var(--barva-okraje);
   border-radius: 1.25rem;
@@ -199,7 +201,10 @@ section { margin-block: 3rem 4rem; }
 .hero-obsah,
 .statistiky { position: relative; z-index: 1; }
 
-.hero-obsah { max-width: 43rem; }
+.hero-obsah {
+  max-width: 43rem;
+  overflow-wrap: anywhere;
+}
 
 .eyebrow {
   margin-bottom: 0.5rem;
@@ -293,6 +298,7 @@ section { margin-block: 3rem 4rem; }
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
   text-transform: uppercase;
 }
 
@@ -302,6 +308,7 @@ section { margin-block: 3rem 4rem; }
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 /* O mně */
@@ -329,6 +336,7 @@ section { margin-block: 3rem 4rem; }
   grid-template-columns: 1.5rem minmax(0, 1fr);
   gap: 0.5rem;
   padding-block: 0.35rem;
+  overflow-wrap: anywhere;
 }
 
 .pravidla li > span {
@@ -339,7 +347,7 @@ section { margin-block: 3rem 4rem; }
 .citace {
   position: relative;
   margin: 1.5rem 0 0;
-  padding: 1rem 3rem 1rem 1.25rem;
+  padding: 1rem min(3rem, 12%) 1rem 1.25rem;
   background-color: var(--barva-panelu);
   color: var(--barva-textu-mirne);
   border: 1px solid var(--barva-okraje);
@@ -356,7 +364,10 @@ section { margin-block: 3rem 4rem; }
   line-height: 1;
 }
 
-.citace p { margin-bottom: 0.35rem; }
+.citace p {
+  margin-bottom: 0.35rem;
+  overflow-wrap: anywhere;
+}
 .citace p:first-of-type { color: var(--barva-textu); font-weight: 700; }
 .citace cite { font-style: normal; font-weight: 700; }
 
@@ -372,22 +383,23 @@ section { margin-block: 3rem 4rem; }
 
 .postup li {
   position: relative;
-  padding: 1.25rem 1.25rem 1.25rem 4.25rem;
+  padding: 1.25rem 1.25rem 1.25rem min(4.25rem, 20%);
   background-color: var(--barva-panelu);
   border: 1px solid var(--barva-okraje);
   border-radius: 0.75rem;
+  overflow-wrap: anywhere;
 }
 
 .postup li::before {
   counter-increment: postup;
   content: counter(postup);
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: min(1rem, 5%);
+  left: min(1rem, 5%);
   display: grid;
   place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: min(2.5rem, 12%);
+  height: min(2.5rem, 12%);
   background-color: var(--barva-akcentu);
   color: var(--barva-pozadi);
   border-radius: 50%;
@@ -399,7 +411,8 @@ section { margin-block: 3rem 4rem; }
 
 /* Projekty */
 .karty {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin: 1.5rem 0 0;
   padding: 0;
@@ -409,10 +422,13 @@ section { margin-block: 3rem 4rem; }
 .karta {
   position: relative;
   display: flex;
+  flex: 1 1 min(100%, 18rem);
   flex-direction: column;
   gap: 0.5rem;
+  min-width: 0;
   overflow: hidden;
-  padding: 1rem;
+  overflow-wrap: anywhere;
+  padding: clamp(0.75rem, 2vw, 1rem);
   background-color: var(--barva-karty-pruhledna);
   backdrop-filter: blur(6px);
   border: 1px solid var(--barva-okraje);
@@ -542,6 +558,7 @@ section { margin-block: 3rem 4rem; }
 .casova-osa li {
   position: relative;
   padding: 0 0 1.5rem 1.25rem;
+  overflow-wrap: anywhere;
 }
 
 .casova-osa li:last-child { padding-bottom: 0; }
@@ -571,11 +588,77 @@ section { margin-block: 3rem 4rem; }
 .casova-osa h3 { margin: 0.5rem 0 0.25rem; }
 .casova-osa p:last-child { margin-bottom: 0; }
 
-/* Kontakt */
-.kontakt-panel {
-  display: grid;
+/* Brainrot bonus */
+.brainrot-panel {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background-color: var(--barva-hero);
+  background-image: radial-gradient(circle at 85% 15%, rgb(255 209 102 / 32%), transparent 55%);
+  border: 2px solid var(--barva-okraje);
+  border-radius: 1.25rem;
+  box-shadow: var(--stin-karty);
+}
+
+.brainrot-text {
+  flex: 1 1 18rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.brainrot-stavy {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brainrot-stavy li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.brainrot-badge {
+  display: inline-block;
+  min-width: 5.5rem;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--barva-akcentu);
+  color: var(--barva-pozadi);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.brainrot-poznamka {
+  color: var(--barva-textu-mirne);
+  font-size: 0.9rem;
+}
+
+.brainrot-obrazek {
+  flex: 0 1 16rem;
+  width: min(100%, 16rem);
+  min-width: 0;
+  height: auto;
+  border: 2px solid var(--barva-okraje);
+  border-radius: 1rem;
+  box-shadow: var(--stin-karty);
+}
+
+/* Kontakt */
+.kontakt-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
   padding: clamp(1.25rem, 3vw, 2.5rem);
   background-color: var(--barva-panelu);
   border: 2px solid var(--barva-okraje);
@@ -583,8 +666,13 @@ section { margin-block: 3rem 4rem; }
   box-shadow: var(--stin-karty);
 }
 
+.kontakt-panel > div {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+
 .kontakt-panel .tlacitko {
-  justify-self: start;
+  flex: 0 1 auto;
   padding: 0.75rem 1.25rem;
   font-size: 1.05rem;
 }
@@ -594,7 +682,10 @@ section { margin-block: 3rem 4rem; }
   padding-left: 1.25rem;
 }
 
-.kontakt-seznam li { margin-bottom: 0.5rem; }
+.kontakt-seznam li {
+  margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;
+}
 
 .site-footer {
   padding-block: 1.5rem 2.5rem;
@@ -629,35 +720,46 @@ section { margin-block: 3rem 4rem; }
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0 0.25rem;
+    min-width: min(100%, 20rem);
   }
 
   h1 { font-size: 2.75rem; }
 
   .uvod {
-    grid-template-columns: minmax(0, 1fr) minmax(11rem, 15rem);
-    grid-template-areas: "hero stats";
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
 
-  .hero-obsah { grid-area: hero; }
+  .hero-obsah {
+    flex: 1 1 26rem;
+    min-width: min(100%, 18rem);
+  }
 
   .statistiky {
-    grid-area: stats;
+    flex: 0 1 15rem;
     grid-template-columns: 1fr;
+    min-width: min(100%, 12rem);
   }
 
   .o-mne-obsah {
-    grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     align-items: start;
   }
 
-  .avatar { width: 100%; }
-
-  .karty { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-  .kontakt-panel {
-    grid-template-columns: minmax(0, 1fr) auto;
+  .avatar {
+    flex: 0 1 18rem;
+    width: auto;
+    min-width: 0;
   }
+
+  .o-mne-text {
+    flex: 1 1 22rem;
+    min-width: 0;
+  }
+
+  .karta { flex-basis: min(100%, 20rem); }
 }
 
 @media (min-width: 60em) {
@@ -669,11 +771,9 @@ section { margin-block: 3rem 4rem; }
 
   h2 { font-size: 1.9rem; }
 
-  .uvod {
-    grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
-  }
+  .statistiky { flex-basis: 18rem; }
 
-  .karty { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .karta { flex-basis: min(100%, 18rem); }
 
   .postup { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -688,9 +788,7 @@ section { margin-block: 3rem 4rem; }
     padding-inline: 3rem;
   }
 
-  .uvod {
-    grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
-  }
+  .statistiky { flex-basis: 20rem; }
 }
 
 /* Vyšší kontrast: text splňuje AAA (7:1), okraje jsou výraznější, bez přechodů a obrázků za textem. */
@@ -727,6 +825,8 @@ section { margin-block: 3rem 4rem; }
   }
 
   .karta,
+  .brainrot-panel,
+  .brainrot-obrazek,
   .tlacitko,
   .citace,
   .avatar,
@@ -870,6 +970,8 @@ section { margin-block: 3rem 4rem; }
   .site-footer { border-color: CanvasText; }
 
   .karta,
+  .brainrot-panel,
+  .brainrot-obrazek,
   .tlacitko,
   .citace,
   .avatar,
@@ -895,6 +997,10 @@ section { margin-block: 3rem 4rem; }
     background-color: ButtonFace;
     color: ButtonText;
     border: 2px solid CanvasText;
+  }
+
+  .brainrot-badge {
+    border: 1px solid CanvasText;
   }
 
   a {

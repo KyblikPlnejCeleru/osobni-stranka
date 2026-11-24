@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="nazev popis">
+  <title id="nazev">Tung Tung Tung Sahur</title>
+  <desc id="popis">Vlastní ilustrace dřevěného bubnu s tváří, rukama a nohama, který drží dřevěnou pálku.</desc>
+  <defs>
+    <linearGradient id="drevo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8b877"/>
+      <stop offset="0.55" stop-color="#b9783c"/>
+      <stop offset="1" stop-color="#7d4a24"/>
+    </linearGradient>
+    <linearGradient id="palka" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d99a55"/>
+      <stop offset="1" stop-color="#8c5529"/>
+    </linearGradient>
+    <radialGradient id="svetlo" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#ffd166" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffd166" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="640" rx="56" fill="#16202c"/>
+  <circle cx="320" cy="270" r="250" fill="url(#svetlo)"/>
+  <ellipse cx="320" cy="560" rx="170" ry="26" fill="#050a10" opacity="0.55"/>
+
+  <g stroke="#8c5529" stroke-width="26" stroke-linecap="round" fill="none">
+    <path d="M248 430 L212 528"/>
+    <path d="M392 430 L428 528"/>
+  </g>
+  <ellipse cx="200" cy="540" rx="46" ry="20" fill="#7d4a24"/>
+  <ellipse cx="440" cy="540" rx="46" ry="20" fill="#7d4a24"/>
+
+  <rect x="230" y="140" width="180" height="310" rx="88" fill="url(#drevo)" stroke="#5f371b" stroke-width="8"/>
+  <rect x="268" y="178" width="104" height="22" rx="11" fill="#4a2a14" opacity="0.85"/>
+  <path d="M250 330 Q320 372 390 330" fill="none" stroke="#5f371b" stroke-width="7" opacity="0.45"/>
+
+  <circle cx="286" cy="250" r="22" fill="#fffdf7" stroke="#4a2a14" stroke-width="5"/>
+  <circle cx="354" cy="250" r="22" fill="#fffdf7" stroke="#4a2a14" stroke-width="5"/>
+  <circle cx="292" cy="255" r="9" fill="#1b1b1b"/>
+  <circle cx="360" cy="255" r="9" fill="#1b1b1b"/>
+  <path d="M264 216 L304 224" stroke="#4a2a14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M376 224 L416 216" stroke="#4a2a14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M320 270 L308 302 L332 302 Z" fill="#8c5529" stroke="#5f371b" stroke-width="4"/>
+  <path d="M296 340 Q320 362 344 340" fill="none" stroke="#4a2a14" stroke-width="9" stroke-linecap="round"/>
+
+  <g stroke="#a96b34" stroke-width="24" stroke-linecap="round" fill="none">
+    <path d="M234 300 L176 344"/>
+    <path d="M406 300 L456 268"/>
+  </g>
+  <circle cx="166" cy="350" r="19" fill="#d99a55" stroke="#5f371b" stroke-width="5"/>
+  <circle cx="466" cy="262" r="19" fill="#d99a55" stroke="#5f371b" stroke-width="5"/>
+
+  <g transform="rotate(-24 466 260)">
+    <rect x="452" y="262" width="28" height="150" rx="12" fill="url(#palka)" stroke="#5f371b" stroke-width="6"/>
+    <rect x="438" y="86" width="56" height="190" rx="28" fill="url(#palka)" stroke="#5f371b" stroke-width="6"/>
+    <circle cx="466" cy="92" r="26" fill="#e8b877" stroke="#5f371b" stroke-width="6"/>
+  </g>
+
+  <g fill="#ffd166">
+    <circle cx="92" cy="132" r="9" opacity="0.9"/>
+    <circle cx="548" cy="150" r="7" opacity="0.75"/>
+    <circle cx="120" cy="470" r="6" opacity="0.7"/>
+    <circle cx="528" cy="476" r="10" opacity="0.85"/>
+  </g>
+</svg>
