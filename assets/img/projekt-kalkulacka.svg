@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Ilustrace sloupcového grafu znázorňujícího klesající hodnoty">
+  <rect width="640" height="360" rx="20" fill="#f3edf7"/>
+  <rect x="84" y="56" width="472" height="248" rx="14" fill="#ffffff" stroke="#6b4c8a" stroke-width="4"/>
+  <path d="M116 272h408" stroke="#b9a7c9" stroke-width="4"/>
+  <path d="M116 100v172M220 100v172M324 100v172M428 100v172M532 100v172" stroke="#e4dcec" stroke-width="2"/>
+  <rect x="136" y="120" width="52" height="152" rx="6" fill="#9b6bb5"/>
+  <rect x="240" y="156" width="52" height="116" rx="6" fill="#9b6bb5"/>
+  <rect x="344" y="190" width="52" height="82" rx="6" fill="#9b6bb5"/>
+  <rect x="448" y="220" width="52" height="52" rx="6" fill="#9b6bb5"/>
+  <path d="M136 132l104 36 104 34 104 30" fill="none" stroke="#e76f51" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="136" cy="132" r="9" fill="#e76f51"/>
+  <circle cx="500" cy="232" r="9" fill="#e76f51"/>
+</svg>
