@@ -43,7 +43,7 @@
 html {
   font-size: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 8rem;
+  scroll-padding-top: 12rem;
 }
 
 body {
@@ -269,6 +269,8 @@ section { margin-block: 2rem 3rem; }
 
 /* Tři zlomy od nejmenšího displeje (mobile first). */
 @media (min-width: 40em) {
+  html { scroll-padding-top: 6rem; }
+
   .header-inner {
     flex-direction: row;
     align-items: center;
