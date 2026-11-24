@@ -1,0 +1,73 @@
+/* Základní (light) schéma – ostatní schémata a media rules přibudou větvemi. */
+:root {
+  color-scheme: light;
+  --barva-pozadi: #ffffff;
+  --barva-textu: #1b1b1b;
+  --barva-odkazu: #0645ad;
+  --barva-karty: #ffffff;
+  --barva-okraje: #c7c7c7;
+  --barva-focus: #005fcc;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--barva-pozadi);
+  color: var(--barva-textu);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { line-height: 1.2; }
+
+a { color: var(--barva-odkazu); }
+
+:focus-visible {
+  outline: 3px solid var(--barva-focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: -10rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: var(--barva-pozadi);
+  color: var(--barva-textu);
+}
+
+.skip-link:focus { top: 0; }
+
+.site-header,
+main,
+.site-footer {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section { margin-block: 2rem; }
+
+/* TODO(feature/sirka): tři zlomy, navigace se přeskupí, žádný horizontální scroll. */
+/* TODO(feature/tmavy-rezim): prefers-color-scheme + color-scheme + proměnné. */
+/* TODO(feature/vyssi-kontrast): prefers-contrast, AAA kontrast, podtržené odkazy. */
+/* TODO(feature/omezeny-pohyb): prefers-reduced-motion pro animace, přechody a scroll. */
+/* TODO(feature/pruhlednost): prefers-reduced-transparency místo průhlednosti a bluru. */
+/* TODO(feature/vynucene-barvy): forced-colors, systémové barvy, okraje a fokus. */
+/* TODO(kombinace): tmavý režim + vyšší kontrast zároveň. */
