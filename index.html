@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Osobní stránka studenta potoka: projekty, dovednosti a kontakt.">
+  <meta name="description" content="Osobní stránka studenta potoka: projekty, pracovní postup, dovednosti a kontakt.">
   <title>potok – student, který tvoří přístupný web</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,8 +20,10 @@
       <nav aria-label="Hlavní navigace">
         <ul class="nav-list">
           <li><a href="#o-mne">O mně</a></li>
+          <li><a href="#postup">Postup</a></li>
           <li><a href="#projekty">Projekty</a></li>
           <li><a href="#dovednosti">Dovednosti</a></li>
+          <li><a href="#denik">Deník</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -30,12 +32,37 @@
 
   <main id="hlavni" tabindex="-1">
     <section id="uvod" class="uvod" aria-labelledby="uvod-nadpis">
-      <h1 id="uvod-nadpis">Ahoj, jsem potok.</h1>
-      <p class="uvod-text">
-        Studuji informační technologie a zajímá mě web, který funguje pro každého –
-        na telefonu i na velkém monitoru, s myší i jen s klávesnicí.
-      </p>
-      <p><a class="tlacitko" href="#projekty">Podívat se na moje projekty</a></p>
+      <img class="hero-vzor" src="assets/img/hero-vzor.svg" alt="" width="320" height="320">
+      <div class="hero-obsah">
+        <p class="eyebrow">Student · tvůrce · přístupnost</p>
+        <h1 id="uvod-nadpis">Ahoj, jsem <span class="jmeno">potok.</span></h1>
+        <p class="hero-lead">
+          Stavím weby, které obstojí i bez dokonalého displeje, rychlé myši
+          nebo nastavení, které používám sám. Sémantika nejdřív, efekty až potom.
+        </p>
+        <p class="status">
+          <span class="status-bod" aria-hidden="true"></span>
+          Právě se učím: JavaScript a testování s čtečkou obrazovky
+        </p>
+        <div class="hero-akce">
+          <a class="tlacitko" href="#projekty">Prohlédnout projekty</a>
+          <a class="tlacitko tlacitko--sekundarni" href="#postup">Jak pracuji</a>
+        </div>
+      </div>
+      <dl class="statistiky">
+        <div>
+          <dt>Projekty</dt>
+          <dd>3</dd>
+        </div>
+        <div>
+          <dt>Skauting</dt>
+          <dd>7 let</dd>
+        </div>
+        <div>
+          <dt>WCAG 2.2</dt>
+          <dd>55 kritérií</dd>
+        </div>
+      </dl>
     </section>
 
     <section id="o-mne" aria-labelledby="o-mne-nadpis">
@@ -53,7 +80,13 @@
             pozorování. Sedm let se věnuji skautingu, kde se učím zodpovědnosti
             a týmové práci.
           </p>
+          <ul class="pravidla">
+            <li><span aria-hidden="true">→</span><strong>Sémantika před dekorací.</strong> Nejdřív struktura, pak barvy.</li>
+            <li><span aria-hidden="true">→</span><strong>Klávesnice před myší.</strong> Každý odkaz musí jít projet tabulátorem.</li>
+            <li><span aria-hidden="true">→</span><strong>Čitelnost před efektem.</strong> Kontrast a velikost textu jsou pevné.</li>
+          </ul>
           <blockquote class="citace">
+            <span class="citace-znak" aria-hidden="true">“</span>
             <p>„Pozornost je nejvzácnější a nejčistší forma velkorysosti.“</p>
             <p><cite>Simone Weil</cite></p>
           </blockquote>
@@ -61,35 +94,75 @@
       </div>
     </section>
 
+    <section id="postup" aria-labelledby="postup-nadpis">
+      <h2 id="postup-nadpis">Jak pracuji</h2>
+      <p>Tři kroky, které opakuji u každého webu, od školního projektu po rozcestník pro spolužáky.</p>
+      <ol class="postup">
+        <li>
+          <h3>Poslouchám a zjednoduším</h3>
+          <p>Zjistím, co má stránka skutečně umět, a odstraním vše, co uživatele jen zpomalí.</p>
+        </li>
+        <li>
+          <h3>Stavím sémanticky</h3>
+          <p>Nadpisy, seznamy, tabulka a landmarky dávají obsahu smysl ještě před prvním CSS pravidlem.</p>
+        </li>
+        <li>
+          <h3>Testuji jinými smysly</h3>
+          <p>Projedu klávesnici, přiblížení, tmavý režim, vyšší kontrast a omezený pohyb.</p>
+        </li>
+      </ol>
+    </section>
+
     <section id="projekty" aria-labelledby="projekty-nadpis">
       <h2 id="projekty-nadpis">Projekty a zájmy</h2>
       <p>Vybral jsem tři věci, které jsem udělal a které mě dodnes baví.</p>
       <ul class="karty">
         <li class="karta">
+          <span class="karta-cislo" aria-hidden="true">01</span>
           <img src="assets/img/projekt-rozestnik.svg" alt="Ilustrace rozcestníku: okno prohlížeče se seznamem odkazů a kompasem" width="640" height="360" loading="lazy">
+          <p class="karta-meta">Web · 2026</p>
           <h3>Rozcestník pro začátečníky</h3>
           <p>
             Přehled studijních materiálů, který jsem udělal pro spolužáky. Každý odkaz
             má výstižný popis a celý seznam jde projet klávesnicí.
           </p>
+          <ul class="tagy">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>A11y</li>
+          </ul>
           <p><a href="mailto:potok@spsejecna.cz?subject=Dotaz%20k%20projektu%20Rozcestn%C3%ADk">Zeptat se na rozcestník e-mailem</a></p>
         </li>
         <li class="karta">
+          <span class="karta-cislo" aria-hidden="true">02</span>
           <img src="assets/img/projekt-priroda.svg" alt="Ilustrace přírodního zápisníku: list, slunce, pták a malý náčrt krajiny" width="640" height="360" loading="lazy">
+          <p class="karta-meta">Aplikace · 2025</p>
           <h3>Zápisník přírody</h3>
           <p>
             Jednoduchá aplikace pro zaznamenávání pozorování z procházek. Zkouším na ní
             pracovat s daty, obrázky a s tím, aby se dala používat i v terénu.
           </p>
+          <ul class="tagy">
+            <li>Data</li>
+            <li>HTML</li>
+            <li>Mobilně</li>
+          </ul>
           <p><a href="mailto:potok@spsejecna.cz?subject=Dotaz%20k%20projektu%20Z%C3%A1pisn%C3%ADk%20p%C5%99%C3%ADrody">Zeptat se na zápisník e-mailem</a></p>
         </li>
         <li class="karta">
+          <span class="karta-cislo" aria-hidden="true">03</span>
           <img src="assets/img/projekt-kalkulacka.svg" alt="Ilustrace sloupcového grafu s klesající linií znázorňující úsporu emisí" width="640" height="360" loading="lazy">
+          <p class="karta-meta">Školní projekt · 2025</p>
           <h3>Kalkulačka dopadu</h3>
           <p>
             Školní projekt, který spočítá orientační uhlíkovou stopu docházky do školy.
             Výsledky jsou textové, nejen barevné, aby byly čitelné pro každého.
           </p>
+          <ul class="tagy">
+            <li>Výpočet</li>
+            <li>Text</li>
+            <li>Graf</li>
+          </ul>
           <p><a href="mailto:potok@spsejecna.cz?subject=Dotaz%20k%20projektu%20Kalkula%C4%8Dka%20dopadu">Zeptat se na kalkulačku e-mailem</a></p>
         </li>
       </ul>
@@ -97,7 +170,7 @@
 
     <section id="dovednosti" aria-labelledby="dovednosti-nadpis">
       <h2 id="dovednosti-nadpis">Dovednosti</h2>
-      <p>Přehled toho, co umím a kde to zatím jen zkouším.</p>
+      <p>Přehled toho, co umím a kde to zatím jen zkouším. Slovo u každé úrovně je vždy hlavní informace, pruh je jen vizuální pomůcka.</p>
       <table class="tabulka">
         <caption>Přehled mých dovedností a zkušeností</caption>
         <thead>
@@ -110,49 +183,80 @@
         <tbody>
           <tr>
             <th scope="row">HTML a sémantika</th>
-            <td>Pokročilý</td>
+            <td><span class="uroven-text">Pokročilý</span><span class="ukazatel" aria-hidden="true" style="--uroven: 90%"></span></td>
             <td>Struktura všech mých webů</td>
           </tr>
           <tr>
             <th scope="row">CSS a responzivní layout</th>
-            <td>Pokročilý</td>
+            <td><span class="uroven-text">Pokročilý</span><span class="ukazatel" aria-hidden="true" style="--uroven: 85%"></span></td>
             <td>Přizpůsobení telefonům i velkým obrazovkám</td>
           </tr>
           <tr>
             <th scope="row">Git a GitHub</th>
-            <td>Základy</td>
+            <td><span class="uroven-text">Základy</span><span class="ukazatel" aria-hidden="true" style="--uroven: 55%"></span></td>
             <td>Práce ve větvích a pull requestech</td>
           </tr>
           <tr>
             <th scope="row">JavaScript</th>
-            <td>Základy</td>
+            <td><span class="uroven-text">Základy</span><span class="ukazatel" aria-hidden="true" style="--uroven: 50%"></span></td>
             <td>Jednoduché interakce v projektech</td>
           </tr>
           <tr>
             <th scope="row">Přístupnost (WCAG)</th>
-            <td>Základy</td>
+            <td><span class="uroven-text">Základy</span><span class="ukazatel" aria-hidden="true" style="--uroven: 60%"></span></td>
             <td>Kontrola kontrastu, klávesnice a čtečky obrazovky</td>
           </tr>
         </tbody>
       </table>
     </section>
 
+    <section id="denik" aria-labelledby="denik-nadpis">
+      <h2 id="denik-nadpis">Teď se učím</h2>
+      <p>Deník dovedností: co už umím, co zkouším a co mě čeká.</p>
+      <ol class="casova-osa">
+        <li>
+          <span class="obdobi">2026 · teď</span>
+          <h3>WCAG 2.2 v praxi</h3>
+          <p>Procházím kritéria A a AA, měřím kontrast a zkouším stránku jen s klávesnicí.</p>
+        </li>
+        <li>
+          <span class="obdobi">2026 · jaro</span>
+          <h3>Práce s Gitem a PR</h3>
+          <p>Větve, slučování a řešení konfliktů. Naučil jsem se, že konflikt není chyba, ale informace.</p>
+        </li>
+        <li>
+          <span class="obdobi">Dál</span>
+          <h3>JavaScript bez frameworku</h3>
+          <p>Chci umět přidat interakci tak, aby stránka fungovala i kdyby se skript nenačetl.</p>
+        </li>
+      </ol>
+    </section>
+
     <section id="kontakt" aria-labelledby="kontakt-nadpis">
-      <h2 id="kontakt-nadpis">Kontakt</h2>
-      <p>
-        Napište mi, máte-li otázku k projektu nebo jen chcete říct, že vám stránka
-        udělala radost.
-      </p>
-      <ul class="kontakt-seznam">
-        <li>E-mail: <a href="mailto:potok@spsejecna.cz">potok@spsejecna.cz</a></li>
-        <li>GitHub: <a href="https://github.com/potok">github.com/potok</a></li>
-      </ul>
+      <div class="kontakt-panel">
+        <div>
+          <p class="eyebrow">Napište mi</p>
+          <h2 id="kontakt-nadpis">Máte nápad nebo otázku?</h2>
+          <p>
+            Rád si o projektu promluvím – klidně jen pár vět. Nejrychlejší je e-mail,
+            odpovídám zpravidla do dvou dnů.
+          </p>
+          <ul class="kontakt-seznam">
+            <li>E-mail: <a href="mailto:potok@spsejecna.cz">potok@spsejecna.cz</a></li>
+            <li>GitHub: <a href="https://github.com/potok">github.com/potok</a></li>
+          </ul>
+        </div>
+        <a class="tlacitko" href="mailto:potok@spsejecna.cz">Napsat e-mail</a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© 2026 potok. Postaveno se sémantickým HTML a ohledem na WCAG 2.2 AA.</p>
-    <p><a href="ACCESSIBILITY.md">Zpráva o přístupnosti</a></p>
+    <p>
+      <a href="ACCESSIBILITY.md">Zpráva o přístupnosti</a>
+      <a href="#hlavni">Nahoru ↑</a>
+    </p>
   </footer>
 </body>
 </html>
