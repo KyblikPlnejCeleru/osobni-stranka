@@ -13,7 +13,8 @@ bylo ve verzi 2.2 odstraněno, proto se nevyhodnocuje).
 - **axe-core** (součást Lighthouse): použit pro automatickou kontrolu kontrastu,
   alternativ, názvů odkazů, struktury a pořadí nadpisů.
 - **WAVE** (online report): finální stav **0 Errors, 0 Contrast Errors, 0 Alerts**.
-  Původní alert „Possible heading“ u loga byl opraven (viz nález 5); zbylé
+  Původní alert „Possible heading“ u loga byl opraven (viz nález 5), upozornění
+  „Long alternative text“ a „Underlined text“ opravena v nálezu 9; zbylé
   informativní položky jsou seznamy funkcí a strukturálních prvků, nikoli chyby.
 - **Klávesnice**: reálně stisknut Tab 22×, navíc Shift+Tab a Enter. Pořadí fokusu:
   skip link → logo → 7 položek navigace → 2 CTA v úvodu → 3 e-mailové odkazy
@@ -52,7 +53,7 @@ stavu *Nesplněno*.
 | 1.3.3 Sensory Characteristics | A | Splněno | Pokyny ani odkazy nespoléhají na barvu, tvar ani polohu. |
 | 1.3.4 Orientation | AA | Splněno | Rozvržení je tekuté, žádné uzamčení orientace. |
 | 1.3.5 Identify Input Purpose | AA | Nevztahuje se | Stránka nemá formulářová pole. |
-| 1.4.1 Use of Color | A | Splněno | Odkazy jsou podtržené, fokus má outline, hover mění i tvar (posunutí), nejen barvu. |
+| 1.4.1 Use of Color | A | Splněno | Odkazy jsou podtržené, fokus má outline, hover mění i tvar (posunutí) a jméno v nadpisu je zvýrazněné barvou i tučností (viz nález 9). |
 | 1.4.2 Audio Control | A | Nevztahuje se | Stránka nepřehrává zvuk. |
 | 1.4.3 Contrast (Minimum) | AA | Splněno | Text splňuje 4,5:1 v obou schématech; tlačítko opraveno commitem `14aeff7`. |
 | 1.4.4 Resize Text | AA | Splněno | Velikosti jsou v `rem`/`em`, kořenové písmo 16/32/64 px funguje bez ztráty obsahu (viz nález 8). |
@@ -124,3 +125,4 @@ stavu *Nesplněno*.
 | 6 | Klávesní test skip linku: po stisku Enter se změnil hash na `#hlavni`, ale `document.activeElement` zůstal `BODY`, protože `<main>` nebyl fokusovatelný. Přidán `tabindex="-1"`; nyní se zaostří `<main id="hlavni">`. | `4ad730d` |
 | 7 | Zátěžový test 400 % textu: lepivá hlavička vyrostla na 769 px a zakrývala zaostřený odkaz. Odebrán `position: sticky`; fokus už nemůže být hlavičkou překryt. | `ad5c47b` |
 | 8 | Nový redesign při 200 % textu vytvořil vodorovný posuvník (pevné grid sloupce `minmax(12rem, 18rem)` a `minmax(11rem, 15rem)`). Sloupce nahrazeny `flex-wrap` s `min()` basis, karty létají do jednoho sloupce, dlouhá slova dostala `overflow-wrap: anywhere`. Při 16/32/64 px kořenového písma je `document.scrollWidth === clientWidth` a žádný prvek nepřetéká. | `8fedeaa` |
+| 9 | WAVE po přidání brainrot sekce hlásil 2Alerts: „Long alternative text“ u ilustrace a „Underlined text“ u neodkazového `<span class="jmeno">`. Alt zkrácen na 90 znaků, jméno zvýrazněno pozadím a tučností bez `text-decoration`. | `58a20bf` |

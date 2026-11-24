@@ -221,10 +221,12 @@ section { margin-block: 3rem 4rem; }
 }
 
 .jmeno {
-  color: var(--barva-akcentu);
-  text-decoration: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.12em;
+  padding: 0 0.12em;
+  background-color: var(--barva-zdrazneni);
+  color: var(--barva-tlacitko-textu);
+  border-radius: 0.2em;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .status {
