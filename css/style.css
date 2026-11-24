@@ -143,9 +143,11 @@ section { margin-block: 2rem 3rem; }
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.tlacitko:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--stin-karty);
+@media (hover: hover) {
+  .tlacitko:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--stin-karty);
+  }
 }
 
 .o-mne-obsah {
@@ -191,9 +193,11 @@ section { margin-block: 2rem 3rem; }
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
-.karta:hover {
-  transform: translateY(-4px);
-  border-color: var(--barva-textu);
+@media (hover: hover) {
+  .karta:hover {
+    transform: translateY(-4px);
+    border-color: var(--barva-textu);
+  }
 }
 
 .karta h3 { margin-block: 0.75rem 0.5rem; }
