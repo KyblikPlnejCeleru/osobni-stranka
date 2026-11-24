@@ -46,6 +46,21 @@ Stránka se nasazuje automaticky po každém pushi do `main` pomocí GitHub Acti
 (`Settings → Pages → Source: GitHub Actions`). Workflow lze spustit i ručně v záložce
 Actions přes `workflow_dispatch`.
 
+## Jak ověřit media rules v DevTools
+
+1. Otevřete stránku a stiskněte **F12**.
+2. Stiskněte **Ctrl+Shift+P** (macOS **Cmd+Shift+P**), napište `Show Rendering` a vyberte panel Rendering.
+3. V sekci **Emulate CSS media feature** postupně nastavte:
+   - `prefers-color-scheme: dark`,
+   - `prefers-contrast: more`,
+   - `prefers-reduced-motion: reduce`,
+   - `prefers-reduced-transparency: reduce`,
+   - `forced-colors: active`.
+4. Kombinaci dvou nastavení ověříte tak, že necháte zaškrtnuté `prefers-color-scheme: dark`
+   a zároveň `prefers-contrast: more`.
+5. Změňte šířku okna (např. 320 px, 768 px, 1440 px) a zkontrolujte, že se navigace
+   přeskupí a neobjeví se vodorovný posuvník.
+
 ## Vývoj
 
 ```sh
