@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Ilustrace přehledného rozcestníku s navigačními odkazy">
+  <rect width="640" height="360" rx="20" fill="#eaf2fb"/>
+  <rect x="72" y="46" width="496" height="268" rx="14" fill="#ffffff" stroke="#42658a" stroke-width="4"/>
+  <rect x="72" y="46" width="496" height="44" rx="14" fill="#42658a"/>
+  <circle cx="98" cy="68" r="7" fill="#ffffff"/>
+  <circle cx="122" cy="68" r="7" fill="#ffffff"/>
+  <circle cx="146" cy="68" r="7" fill="#ffffff"/>
+  <rect x="104" y="122" width="180" height="18" rx="9" fill="#9db6cf"/>
+  <rect x="104" y="160" width="300" height="12" rx="6" fill="#d3dfeb"/>
+  <rect x="104" y="184" width="260" height="12" rx="6" fill="#d3dfeb"/>
+  <rect x="104" y="228" width="132" height="40" rx="8" fill="#ffb703"/>
+  <circle cx="470" cy="200" r="62" fill="none" stroke="#42658a" stroke-width="8"/>
+  <path d="M470 148l14 44 40 14-40 14-14 44-14-44-40-14 40-14z" fill="#e76f51"/>
+</svg>

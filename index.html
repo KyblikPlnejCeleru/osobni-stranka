@@ -4,53 +4,155 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Osobní stránka – potok</title>
+  <meta name="description" content="Osobní stránka studenta potoka: projekty, dovednosti a kontakt.">
+  <title>potok – student, který tvoří přístupný web</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#hlavni">Přeskočit na hlavní obsah</a>
 
   <header class="site-header">
-    <p class="logo">potok</p>
-    <nav aria-label="Hlavní navigace">
-      <ul class="nav-list">
-        <li><a href="#o-mne">O mně</a></li>
-        <li><a href="#projekty">Projekty</a></li>
-        <li><a href="#dovednosti">Dovednosti</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <p class="logo">
+        <img src="assets/img/dekorace.svg" alt="" width="24" height="24">
+        potok
+      </p>
+      <nav aria-label="Hlavní navigace">
+        <ul class="nav-list">
+          <li><a href="#o-mne">O mně</a></li>
+          <li><a href="#projekty">Projekty</a></li>
+          <li><a href="#dovednosti">Dovednosti</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main id="hlavni">
-    <section id="uvod" aria-labelledby="uvod-nadpis">
-      <h1 id="uvod-nadpis">TODO: jméno</h1>
-      <p>TODO: úvod</p>
+    <section id="uvod" class="uvod" aria-labelledby="uvod-nadpis">
+      <h1 id="uvod-nadpis">Ahoj, jsem potok.</h1>
+      <p class="uvod-text">
+        Studuji informační technologie a zajímá mě web, který funguje pro každého –
+        na telefonu i na velkém monitoru, s myší i jen s klávesnicí.
+      </p>
+      <p><a class="tlacitko" href="#projekty">Podívat se na moje projekty</a></p>
     </section>
 
     <section id="o-mne" aria-labelledby="o-mne-nadpis">
       <h2 id="o-mne-nadpis">O mně</h2>
-      <p>TODO: představení</p>
+      <div class="o-mne-obsah">
+        <img class="avatar" src="assets/img/avatar.svg" alt="Ilustrovaný portrét potoka: usmívající se student v modré košili" width="400" height="400">
+        <div class="o-mne-text">
+          <p>
+            Jsem student střední školy a ve volném čase stavím malé weby a nástroje.
+            Nejvíc mě baví převádět složité věci na jednoduché rozhraní, které zvládne
+            i člověk se čtečkou obrazovky nebo s nastavením, které se liší od mého.
+          </p>
+          <p>
+            Když zrovna nekoukám do editoru, chodím do přírody, fotím ji a zapisuji si
+            pozorování. Sedm let se věnuji skautingu, kde se učím zodpovědnosti
+            a týmové práci.
+          </p>
+          <blockquote class="citace">
+            <p>„Pozornost je nejvzácnější a nejčistší forma velkorysosti.“</p>
+            <p><cite>Simone Weil</cite></p>
+          </blockquote>
+        </div>
+      </div>
     </section>
 
     <section id="projekty" aria-labelledby="projekty-nadpis">
       <h2 id="projekty-nadpis">Projekty a zájmy</h2>
-      <p>TODO: projekty</p>
+      <p>Vybral jsem tři věci, které jsem udělal a které mě dodnes baví.</p>
+      <ul class="karty">
+        <li class="karta">
+          <img src="assets/img/projekt-rozestnik.svg" alt="Ilustrace rozcestníku: okno prohlížeče se seznamem odkazů a kompasem" width="640" height="360" loading="lazy">
+          <h3>Rozcestník pro začátečníky</h3>
+          <p>
+            Přehled studijních materiálů, který jsem udělal pro spolužáky. Každý odkaz
+            má výstižný popis a celý seznam jde projet klávesnicí.
+          </p>
+          <p><a href="mailto:potok@spsejecna.cz?subject=Dotaz%20k%20projektu%20Rozcestn%C3%ADk">Zeptat se na rozcestník e-mailem</a></p>
+        </li>
+        <li class="karta">
+          <img src="assets/img/projekt-priroda.svg" alt="Ilustrace přírodního zápisníku: list, slunce, pták a malý náčrt krajiny" width="640" height="360" loading="lazy">
+          <h3>Zápisník přírody</h3>
+          <p>
+            Jednoduchá aplikace pro zaznamenávání pozorování z procházek. Zkouším na ní
+            pracovat s daty, obrázky a s tím, aby se dala používat i v terénu.
+          </p>
+          <p><a href="mailto:potok@spsejecna.cz?subject=Dotaz%20k%20projektu%20Z%C3%A1pisn%C3%ADk%20p%C5%99%C3%ADrody">Zeptat se na zápisník e-mailem</a></p>
+        </li>
+        <li class="karta">
+          <img src="assets/img/projekt-kalkulacka.svg" alt="Ilustrace sloupcového grafu s klesající linií znázorňující úsporu emisí" width="640" height="360" loading="lazy">
+          <h3>Kalkulačka dopadu</h3>
+          <p>
+            Školní projekt, který spočítá orientační uhlíkovou stopu docházky do školy.
+            Výsledky jsou textové, nejen barevné, aby byly čitelné pro každého.
+          </p>
+          <p><a href="mailto:potok@spsejecna.cz?subject=Dotaz%20k%20projektu%20Kalkula%C4%8Dka%20dopadu">Zeptat se na kalkulačku e-mailem</a></p>
+        </li>
+      </ul>
     </section>
 
     <section id="dovednosti" aria-labelledby="dovednosti-nadpis">
       <h2 id="dovednosti-nadpis">Dovednosti</h2>
-      <p>TODO: tabulka dovedností</p>
+      <p>Přehled toho, co umím a kde to zatím jen zkouším.</p>
+      <table class="tabulka">
+        <caption>Přehled mých dovedností a zkušeností</caption>
+        <thead>
+          <tr>
+            <th scope="col">Dovednost</th>
+            <th scope="col">Úroveň</th>
+            <th scope="col">Kde ji používám</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">HTML a sémantika</th>
+            <td>Pokročilý</td>
+            <td>Struktura všech mých webů</td>
+          </tr>
+          <tr>
+            <th scope="row">CSS a responzivní layout</th>
+            <td>Pokročilý</td>
+            <td>Přizpůsobení telefonům i velkým obrazovkám</td>
+          </tr>
+          <tr>
+            <th scope="row">Git a GitHub</th>
+            <td>Základy</td>
+            <td>Práce ve větvích a pull requestech</td>
+          </tr>
+          <tr>
+            <th scope="row">JavaScript</th>
+            <td>Základy</td>
+            <td>Jednoduché interakce v projektech</td>
+          </tr>
+          <tr>
+            <th scope="row">Přístupnost (WCAG)</th>
+            <td>Základy</td>
+            <td>Kontrola kontrastu, klávesnice a čtečky obrazovky</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section id="kontakt" aria-labelledby="kontakt-nadpis">
       <h2 id="kontakt-nadpis">Kontakt</h2>
-      <p>TODO: kontakt</p>
+      <p>
+        Napište mi, máte-li otázku k projektu nebo jen chcete říct, že vám stránka
+        udělala radost.
+      </p>
+      <ul class="kontakt-seznam">
+        <li>E-mail: <a href="mailto:potok@spsejecna.cz">potok@spsejecna.cz</a></li>
+        <li>GitHub: <a href="https://github.com/potok">github.com/potok</a></li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>TODO: patička</p>
+    <p>© 2026 potok. Postaveno se sémantickým HTML a ohledem na WCAG 2.2 AA.</p>
+    <p><a href="ACCESSIBILITY.md">Zpráva o přístupnosti</a></p>
   </footer>
 </body>
 </html>

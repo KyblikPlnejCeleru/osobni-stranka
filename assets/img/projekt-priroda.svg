@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Ilustrace zápisníku přírody s listem, sluncem a ptákem">
+  <rect width="640" height="360" rx="20" fill="#e9f5e9"/>
+  <circle cx="508" cy="90" r="44" fill="#ffd166"/>
+  <path d="M60 296c50-90 120-130 190-130s120 44 150 130z" fill="#7fb069"/>
+  <path d="M250 296c-14-70-54-118-116-150 4 76 42 130 116 150z" fill="#4f8a5b"/>
+  <path d="M250 296c22-66 70-104 138-120-16 70-62 110-138 120z" fill="#5d9c59"/>
+  <path d="M250 296c-4-56-2-96 4-140" fill="none" stroke="#2f5d3a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M414 150c14-18 34-18 48 0 14-18 34-18 48 0" fill="none" stroke="#355c7d" stroke-width="8" stroke-linecap="round"/>
+  <rect x="70" y="62" width="150" height="104" rx="10" fill="#ffffff" stroke="#4f8a5b" stroke-width="4"/>
+  <path d="M92 138l34-38 26 26 22-18 24 30z" fill="#a8d5a2"/>
+</svg>
