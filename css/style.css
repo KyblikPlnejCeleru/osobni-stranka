@@ -410,5 +410,51 @@ section { margin-block: 2rem 3rem; }
     box-shadow: none;
   }
 }
-/* TODO(feature/vynucene-barvy): forced-colors, systémové barvy, okraje a fokus. */
+/* Vynucené barvy (Windows High Contrast): systémové barvy, viditelné okraje a fokus. */
+@media (forced-colors: active) {
+  :root {
+    --barva-pozadi: Canvas;
+    --barva-textu: CanvasText;
+    --barva-textu-mirne: CanvasText;
+    --barva-odkazu: LinkText;
+    --barva-odkazu-navstevovane: VisitedText;
+    --barva-karty: Canvas;
+    --barva-karty-pruhledna: Canvas;
+    --barva-okraje: CanvasText;
+    --barva-focus: Highlight;
+    --barva-zdrazneni: ButtonFace;
+    --stin-karty: none;
+    --pozadi-stranky: none;
+  }
+
+  body { background-image: none; }
+
+  .site-header,
+  .site-footer { border-color: CanvasText; }
+
+  .karta,
+  .tlacitko,
+  .citace,
+  .avatar,
+  .tabulka th,
+  .tabulka td,
+  .skip-link {
+    border: 1px solid CanvasText;
+    box-shadow: none;
+    backdrop-filter: none;
+    background-image: none;
+  }
+
+  a {
+    color: LinkText;
+    text-decoration: underline;
+  }
+
+  a:visited { color: VisitedText; }
+
+  :focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 3px;
+  }
+}
 /* TODO(kombinace): tmavý režim + vyšší kontrast zároveň. */
