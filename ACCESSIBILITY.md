@@ -7,19 +7,22 @@ bylo ve verzi 2.2 odstraněno, proto se nevyhodnocuje).
 ## Použité postupy a nástroje
 
 - **Lighthouse** (Chrome DevTools, kategorie Accessibility): výchozí skóre 95, nález
-  `color-contrast` opraven (viz nález 1). Po opravě již audit nehlásí žádný vážný
-  nález.
+  `color-contrast` opraven (viz nález 1). Závěrečný audit nasazené stránky:
+  **Accessibility 100, Best Practices 100, SEO 100**, bez nálezů.
 - **W3C Nu HTML Checker**: `index.html` prošel bez chyb a upozornění.
 - **axe-core** (součást Lighthouse): použit pro automatickou kontrolu kontrastu,
   alternativ, názvů odkazů, struktury a pořadí nadpisů.
-- **WAVE**: rozšíření nebylo v dostupném prostředí k dispozici; ekvivalentní
-  automatická kontrola byla provedena pomocí axe-core/Lighthouse a doplněna ručně.
+- **WAVE** (online report): **0 Errors, 0 Contrast Errors**. Jediný alert
+  „Possible heading“ u loga byl opraven (viz nález 5); zbylé informativní položky
+  jsou seznamy funkcí a strukturálních prvků, nikoli chyby.
 - **Ruční kontrola**: klávesnice (Tab, Shift+Tab, Enter), pořadí fokusu, viditelnost
   fokusu, skip link, přiblížení 200 % a 400 %, emulace `prefers-color-scheme`,
   `prefers-contrast`, `prefers-reduced-motion`, `prefers-reduced-transparency`
   a `forced-colors` v DevTools (včetně kombinace tmavý režim + vyšší kontrast).
 - **Čtečka obrazovky**: struktura (landmarky, nadpisy, seznamy, tabulka s `caption`
-  a `scope`) byla ověřena pomocí accessibility stromu v DevTools.
+  a `scope`) byla ověřena pomocí accessibility stromu v DevTools. Přímý poslech
+  s NVDA nebyl v tomto prostředí možný, proto je tato část doložena stromem
+  a sémantickým HTML.
 
 Stavy: **Splněno** = kritérium je na stránce implementováno; **Nevztahuje se** =
 stránka neobsahuje příslušný typ obsahu ani interakci. Žádné kritérium není ve
@@ -108,3 +111,4 @@ stavu *Nesplněno*.
 | 2 | Ruční kontrola kritéria 2.4.11 při 200 % zvětšení: lepivá hlavička přesahovala `scroll-padding-top: 8rem`, takže mohl být zakryt prvek se zaostřením. | `46dc041` |
 | 3 | Lighthouse: `<meta name="color-scheme">` byl v kostře nastaven pouze na `light`, takže v tmavém režimu systém nebarvil nativní ovládací prvky a posuvníky správně. | `36d8e8c` |
 | 4 | Po vyřešení cvičného konfliktu zůstala barva odkazů `#3584e4` (kontrast pod 4,5:1 na bílém pozadí), což porušovalo 1.4.3. | `0c58b4f` |
+| 5 | WAVE alert „Possible heading“: text loga „potok“ byl vizuálně upraven jako nadpis, přestože jím není. Logo je nyní odkazem s přístupným názvem a střízlivějším stylem. | `2a56640` |
