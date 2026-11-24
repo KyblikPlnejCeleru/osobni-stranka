@@ -16,7 +16,7 @@ Osobní webová stránka vytvořená jako školní projekt.
 | Tmavý režim | `prefers-color-scheme` přepíná CSS proměnné, `color-scheme` a barvy posuvníků, aby text i ovládací prvky měly v obou schématech dostatečný kontrast. |
 | Vyšší kontrast | `prefers-contrast: more` zvyšuje kontrast textu na AAA, zesiluje okraje, podtrhuje odkazy a odebírá přechody a obrázky za textem. |
 | Omezený pohyb | `prefers-reduced-motion: reduce` vypne plynulé scrollování, animaci karet i přechody odkazů; žádná informace není sdílena jen pohybem. |
-| Průhlednost | TODO |
+| Průhlednost | `prefers-reduced-transparency: reduce` nahrazuje průhledná pozadí karet a rozostření plnými barvami a výraznějším okrajem. |
 | Vynucené barvy | TODO |
 | Kombinace tmavý režim + vyšší kontrast | Spojená podmínka `and` nastaví černé pozadí, bílý text a žluté odkazy, aby obě nastavení fungovala zároveň. |
 

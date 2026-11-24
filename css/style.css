@@ -398,6 +398,17 @@ section { margin-block: 2rem 3rem; }
   .tlacitko:hover,
   .karta:hover { transform: none !important; }
 }
-/* TODO(feature/pruhlednost): prefers-reduced-transparency místo průhlednosti a bluru. */
+/* Omezená průhlednost: karty dostanou plnou barvu, bez rozostření a bez průhledného pozadí. */
+@media (prefers-reduced-transparency: reduce) {
+  body { background-image: none; }
+
+  .karta {
+    background-color: var(--barva-karty);
+    background-image: none;
+    backdrop-filter: none;
+    border-width: 2px;
+    box-shadow: none;
+  }
+}
 /* TODO(feature/vynucene-barvy): forced-colors, systémové barvy, okraje a fokus. */
 /* TODO(kombinace): tmavý režim + vyšší kontrast zároveň. */
