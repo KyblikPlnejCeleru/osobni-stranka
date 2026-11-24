@@ -314,7 +314,6 @@ section { margin-block: 2rem 3rem; }
     padding-inline: 3rem;
   }
 }
-/* TODO(feature/tmavy-rezim): prefers-color-scheme + color-scheme + proměnné. */
 /* Vyšší kontrast: text splňuje AAA (7:1), okraje jsou výraznější, bez přechodů a obrázků za textem. */
 @media (prefers-contrast: more) {
   :root {
@@ -463,4 +462,3 @@ section { margin-block: 2rem 3rem; }
     outline-offset: 3px;
   }
 }
-/* TODO(kombinace): tmavý režim + vyšší kontrast zároveň. */
