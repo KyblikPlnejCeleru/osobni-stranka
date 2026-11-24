@@ -17,7 +17,7 @@ Osobní webová stránka vytvořená jako školní projekt.
 | Vyšší kontrast | `prefers-contrast: more` zvyšuje kontrast textu na AAA, zesiluje okraje, podtrhuje odkazy a odebírá přechody a obrázky za textem. |
 | Omezený pohyb | `prefers-reduced-motion: reduce` vypne plynulé scrollování, animaci karet i přechody odkazů; žádná informace není sdílena jen pohybem. |
 | Průhlednost | `prefers-reduced-transparency: reduce` nahrazuje průhledná pozadí karet a rozostření plnými barvami a výraznějším okrajem. |
-| Vynucené barvy | TODO |
+| Vynucené barvy | `forced-colors: active` používá systémové barvy (Canvas, CanvasText, LinkText, Highlight) a nahrazuje stíny okraji karet, tlačítek i fokusu. |
 | Kombinace tmavý režim + vyšší kontrast | Spojená podmínka `and` nastaví černé pozadí, bílý text a žluté odkazy, aby obě nastavení fungovala zároveň. |
 
 ## Nasazení
