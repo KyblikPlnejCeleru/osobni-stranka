@@ -12,13 +12,15 @@ bylo ve verzi 2.2 odstraněno, proto se nevyhodnocuje).
 - **W3C Nu HTML Checker**: `index.html` prošel bez chyb a upozornění.
 - **axe-core** (součást Lighthouse): použit pro automatickou kontrolu kontrastu,
   alternativ, názvů odkazů, struktury a pořadí nadpisů.
-- **WAVE** (online report): **0 Errors, 0 Contrast Errors**. Jediný alert
-  „Possible heading“ u loga byl opraven (viz nález 5); zbylé informativní položky
-  jsou seznamy funkcí a strukturálních prvků, nikoli chyby.
+- **WAVE** (online report): finální stav **0 Errors, 0 Contrast Errors, 0 Alerts**.
+  Původní alert „Possible heading“ u loga byl opraven (viz nález 5); zbylé
+  informativní položky jsou seznamy funkcí a strukturálních prvků, nikoli chyby.
 - **Ruční kontrola**: klávesnice (Tab, Shift+Tab, Enter), pořadí fokusu, viditelnost
-  fokusu, skip link, přiblížení 200 % a 400 %, emulace `prefers-color-scheme`,
-  `prefers-contrast`, `prefers-reduced-motion`, `prefers-reduced-transparency`
-  a `forced-colors` v DevTools (včetně kombinace tmavý režim + vyšší kontrast).
+  fokusu, skip link a přiblížení 200 % a 400 %. Jednotlivé `@media` bloky
+  (`prefers-color-scheme`, `prefers-contrast`, `prefers-reduced-motion`,
+  `prefers-reduced-transparency`, `forced-colors` i jejich kombinace) byly
+  ověřeny kontrolou deklarací a výpočtem kontrastu; postup přímé emulace
+  v DevTools je popsán v `README.md`.
 - **Čtečka obrazovky**: struktura (landmarky, nadpisy, seznamy, tabulka s `caption`
   a `scope`) byla ověřena pomocí accessibility stromu v DevTools. Přímý poslech
   s NVDA nebyl v tomto prostředí možný, proto je tato část doložena stromem
