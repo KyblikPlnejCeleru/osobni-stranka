@@ -12,8 +12,17 @@
   --barva-focus: #005fcc;
   --barva-zdrazneni: #ffb703;
   --barva-tlacitko-textu: #1b1b1b;
-  --stin-karty: 0 0.25rem 1rem rgb(27 27 27 / 12%);
-  --pozadi-stranky: linear-gradient(180deg, #f3f7fc 0, #ffffff 38rem);
+  --stin-karty: 0 0.35rem 1.25rem rgb(27 27 27 / 14%);
+  --pozadi-stranky: radial-gradient(circle at 12% -8%, #dbeafe 0, transparent 34rem),
+    linear-gradient(180deg, #f3f7fc 0, #ffffff 46rem);
+  --barva-panelu: #f6f9ff;
+  --barva-hero: #eef4ff;
+  --barva-akcentu: #0645ad;
+  --barva-tag-pozadi: #e8f0fe;
+  --barva-tag-textu: #1b1b1b;
+  --barva-casovy: #0645ad;
+  --barva-ukazatel-pozadi: #d6dde6;
+  --barva-ukazatel-vypln: #0645ad;
   scrollbar-color: var(--barva-okraje) var(--barva-pozadi);
 }
 
@@ -31,8 +40,17 @@
     --barva-focus: #ffd166;
     --barva-zdrazneni: #ffd166;
     --barva-tlacitko-textu: #12161c;
-    --stin-karty: 0 0.25rem 1rem rgb(0 0 0 / 50%);
-    --pozadi-stranky: linear-gradient(180deg, #0e1217 0, #12161c 38rem);
+    --stin-karty: 0 0.35rem 1.25rem rgb(0 0 0 / 55%);
+    --pozadi-stranky: radial-gradient(circle at 12% -8%, #16273b 0, transparent 34rem),
+      linear-gradient(180deg, #0e1217 0, #12161c 46rem);
+    --barva-panelu: #1c232d;
+    --barva-hero: #17202b;
+    --barva-akcentu: #9ecbff;
+    --barva-tag-pozadi: #243247;
+    --barva-tag-textu: #f5f7fa;
+    --barva-casovy: #9ecbff;
+    --barva-ukazatel-pozadi: #2e3742;
+    --barva-ukazatel-vypln: #9ecbff;
   }
 }
 
@@ -57,8 +75,8 @@ body {
 }
 
 h1, h2, h3 { line-height: 1.2; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
+h1 { font-size: 2.25rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.65rem; letter-spacing: -0.01em; }
 h3 { font-size: 1.15rem; }
 
 p { margin-block: 0 1rem; }
@@ -98,6 +116,7 @@ img {
 
 .site-header {
   background-color: var(--barva-pozadi);
+  border-top: 5px solid var(--barva-akcentu);
   border-bottom: 1px solid var(--barva-okraje);
 }
 
@@ -112,18 +131,21 @@ main,
 .header-inner {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding-block: 0.5rem;
 }
 
 .logo {
   display: inline-flex;
+  flex: none;
   align-items: center;
   gap: 0.5rem;
   min-height: 2.75rem;
   color: var(--barva-textu);
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
 }
 
@@ -145,15 +167,92 @@ main,
   padding: 0.5rem 0.75rem;
 }
 
-section { margin-block: 2rem 3rem; }
-
-.uvod {
-  padding-block: 1.5rem;
+.nav-list a {
+  border-radius: 0.5rem;
+  font-weight: 600;
 }
 
-.uvod-text {
+section { margin-block: 3rem 4rem; }
+
+/* Hero: výrazný panel s dekorativním vzorem a přehlednými statistikami. */
+.uvod {
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+  padding: clamp(1rem, 4vw, 3rem);
+  background-color: var(--barva-hero);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 1.25rem;
+  box-shadow: var(--stin-karty);
+}
+
+.hero-vzor {
+  position: absolute;
+  top: -3.5rem;
+  right: -3.5rem;
+  width: min(24rem, 70vw);
+  height: auto;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-obsah,
+.statistiky { position: relative; z-index: 1; }
+
+.hero-obsah {
+  max-width: 43rem;
+  overflow-wrap: anywhere;
+}
+
+.eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--barva-akcentu);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-lead {
+  max-width: 42rem;
   font-size: 1.15rem;
-  max-width: 45rem;
+}
+
+.jmeno {
+  color: var(--barva-akcentu);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--barva-karty);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.status-bod {
+  flex: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: var(--barva-zdrazneni);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 50%;
+}
+
+.hero-akce {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 .tlacitko {
@@ -166,6 +265,13 @@ section { margin-block: 2rem 3rem; }
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
+.tlacitko--sekundarni {
+  background-color: var(--barva-karty);
+  color: var(--barva-textu);
+  border: 2px solid var(--barva-okraje);
+  text-decoration: underline;
+}
+
 @media (hover: hover) {
   .tlacitko:hover {
     transform: translateY(-2px);
@@ -173,6 +279,39 @@ section { margin-block: 2rem 3rem; }
   }
 }
 
+.statistiky {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.statistiky > div {
+  padding: 1rem;
+  background-color: var(--barva-karty);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 0.75rem;
+}
+
+.statistiky dt {
+  color: var(--barva-textu-mirne);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.statistiky dd {
+  margin: 0.25rem 0 0;
+  color: var(--barva-akcentu);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+/* O mně */
 .o-mne-obsah {
   display: grid;
   gap: 1.5rem;
@@ -186,27 +325,110 @@ section { margin-block: 2rem 3rem; }
 
 .o-mne-text { max-width: 45rem; }
 
-.citace {
-  margin: 1.5rem 0 0;
-  padding: 0.75rem 1rem;
-  border-left: 4px solid var(--barva-zdrazneni);
-  background-color: var(--barva-karty);
-  color: var(--barva-textu-mirne);
+.pravidla {
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
 }
 
-.citace p { margin-bottom: 0.35rem; }
+.pravidla li {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  padding-block: 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+.pravidla li > span {
+  color: var(--barva-akcentu);
+  font-weight: 800;
+}
+
+.citace {
+  position: relative;
+  margin: 1.5rem 0 0;
+  padding: 1rem min(3rem, 12%) 1rem 1.25rem;
+  background-color: var(--barva-panelu);
+  color: var(--barva-textu-mirne);
+  border: 1px solid var(--barva-okraje);
+  border-left: 6px solid var(--barva-zdrazneni);
+  border-radius: 0.75rem;
+}
+
+.citace-znak {
+  position: absolute;
+  top: -0.6rem;
+  right: 1rem;
+  color: var(--barva-zdrazneni);
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.citace p {
+  margin-bottom: 0.35rem;
+  overflow-wrap: anywhere;
+}
+.citace p:first-of-type { color: var(--barva-textu); font-weight: 700; }
 .citace cite { font-style: normal; font-weight: 700; }
 
-.karty {
+/* Jak pracuji */
+.postup {
   display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: postup;
+}
+
+.postup li {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.25rem min(4.25rem, 20%);
+  background-color: var(--barva-panelu);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.postup li::before {
+  counter-increment: postup;
+  content: counter(postup);
+  position: absolute;
+  top: min(1rem, 5%);
+  left: min(1rem, 5%);
+  display: grid;
+  place-items: center;
+  width: min(2.5rem, 12%);
+  height: min(2.5rem, 12%);
+  background-color: var(--barva-akcentu);
+  color: var(--barva-pozadi);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.postup h3 { margin: 0 0 0.35rem; }
+.postup p:last-child { margin-bottom: 0; }
+
+/* Projekty */
+.karty {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  margin: 0;
+  margin: 1.5rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .karta {
-  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex: 1 1 min(100%, 18rem);
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  padding: clamp(0.75rem, 2vw, 1rem);
   background-color: var(--barva-karty-pruhledna);
   backdrop-filter: blur(6px);
   border: 1px solid var(--barva-okraje);
@@ -223,20 +445,70 @@ section { margin-block: 2rem 3rem; }
   }
 }
 
-.karta h3 { margin-block: 0.75rem 0.5rem; }
+.karta-cislo {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  z-index: 1;
+  color: var(--barva-akcentu);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
 
-.karta p:last-child { margin-bottom: 0; }
+.karta img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: var(--barva-karty);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 0.5rem;
+}
+
+.karta-meta {
+  margin: 0;
+  color: var(--barva-akcentu);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.karta h3 { margin-block: 0.25rem 0.35rem; }
+
+.tagy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.25rem 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tagy li {
+  padding: 0.2rem 0.55rem;
+  background-color: var(--barva-tag-pozadi);
+  color: var(--barva-tag-textu);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.karta > p:last-child { margin-top: auto; margin-bottom: 0; }
 
 @keyframes karta-vstup {
   from { opacity: 0; transform: translateY(1rem); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Dovednosti */
 .tabulka {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
   overflow-wrap: anywhere;
+  font-size: 0.95rem;
 }
 
 .tabulka caption {
@@ -255,17 +527,176 @@ section { margin-block: 2rem 3rem; }
 
 .tabulka thead { background-color: var(--barva-karty); }
 
+.uroven-text { display: block; font-weight: 700; }
+
+.ukazatel {
+  display: block;
+  height: 0.5rem;
+  margin-top: 0.35rem;
+  overflow: hidden;
+  background-color: var(--barva-ukazatel-pozadi);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 999px;
+}
+
+.ukazatel::before {
+  content: "";
+  display: block;
+  width: var(--uroven, 0%);
+  height: 100%;
+  background-color: var(--barva-ukazatel-vypln);
+}
+
+/* Deník */
+.casova-osa {
+  margin: 1.5rem 0 0;
+  padding: 0 0 0 1.5rem;
+  list-style: none;
+  border-left: 3px solid var(--barva-akcentu);
+}
+
+.casova-osa li {
+  position: relative;
+  padding: 0 0 1.5rem 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.casova-osa li:last-child { padding-bottom: 0; }
+
+.casova-osa li::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -1.85rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  background-color: var(--barva-akcentu);
+  border: 3px solid var(--barva-pozadi);
+  border-radius: 50%;
+}
+
+.obdobi {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--barva-akcentu);
+  color: var(--barva-pozadi);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.casova-osa h3 { margin: 0.5rem 0 0.25rem; }
+.casova-osa p:last-child { margin-bottom: 0; }
+
+/* Brainrot bonus */
+.brainrot-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background-color: var(--barva-hero);
+  background-image: radial-gradient(circle at 85% 15%, rgb(255 209 102 / 32%), transparent 55%);
+  border: 2px solid var(--barva-okraje);
+  border-radius: 1.25rem;
+  box-shadow: var(--stin-karty);
+}
+
+.brainrot-text {
+  flex: 1 1 18rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.brainrot-stavy {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brainrot-stavy li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.brainrot-badge {
+  display: inline-block;
+  min-width: 5.5rem;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--barva-akcentu);
+  color: var(--barva-pozadi);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.brainrot-poznamka {
+  color: var(--barva-textu-mirne);
+  font-size: 0.9rem;
+}
+
+.brainrot-obrazek {
+  flex: 0 1 16rem;
+  width: min(100%, 16rem);
+  min-width: 0;
+  height: auto;
+  border: 2px solid var(--barva-okraje);
+  border-radius: 1rem;
+  box-shadow: var(--stin-karty);
+}
+
+/* Kontakt */
+.kontakt-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background-color: var(--barva-panelu);
+  border: 2px solid var(--barva-okraje);
+  border-radius: 1rem;
+  box-shadow: var(--stin-karty);
+}
+
+.kontakt-panel > div {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+
+.kontakt-panel .tlacitko {
+  flex: 0 1 auto;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.05rem;
+}
+
 .kontakt-seznam {
   margin: 0;
   padding-left: 1.25rem;
 }
 
-.kontakt-seznam li { margin-bottom: 0.5rem; }
+.kontakt-seznam li {
+  margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;
+}
 
 .site-footer {
   padding-block: 1.5rem 2.5rem;
   border-top: 1px solid var(--barva-okraje);
   color: var(--barva-textu-mirne);
+}
+
+.site-footer p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
 }
 
 .site-footer a {
@@ -289,16 +720,46 @@ section { margin-block: 2rem 3rem; }
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0 0.25rem;
+    min-width: min(100%, 20rem);
+  }
+
+  h1 { font-size: 2.75rem; }
+
+  .uvod {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .hero-obsah {
+    flex: 1 1 26rem;
+    min-width: min(100%, 18rem);
+  }
+
+  .statistiky {
+    flex: 0 1 15rem;
+    grid-template-columns: 1fr;
+    min-width: min(100%, 12rem);
   }
 
   .o-mne-obsah {
-    grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     align-items: start;
   }
 
-  .avatar { width: 100%; }
+  .avatar {
+    flex: 0 1 18rem;
+    width: auto;
+    min-width: 0;
+  }
 
-  .karty { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .o-mne-text {
+    flex: 1 1 22rem;
+    min-width: 0;
+  }
+
+  .karta { flex-basis: min(100%, 20rem); }
 }
 
 @media (min-width: 60em) {
@@ -308,19 +769,28 @@ section { margin-block: 2rem 3rem; }
     padding-inline: 2rem;
   }
 
-  .karty { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  h2 { font-size: 1.9rem; }
+
+  .statistiky { flex-basis: 18rem; }
+
+  .karta { flex-basis: min(100%, 18rem); }
+
+  .postup { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (min-width: 80em) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 1.75rem; }
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
 
   .site-header,
   main,
   .site-footer {
     padding-inline: 3rem;
   }
+
+  .statistiky { flex-basis: 20rem; }
 }
+
 /* Vyšší kontrast: text splňuje AAA (7:1), okraje jsou výraznější, bez přechodů a obrázků za textem. */
 @media (prefers-contrast: more) {
   :root {
@@ -337,6 +807,14 @@ section { margin-block: 2rem 3rem; }
     --barva-tlacitko-textu: #000000;
     --stin-karty: none;
     --pozadi-stranky: none;
+    --barva-panelu: #ffffff;
+    --barva-hero: #ffffff;
+    --barva-akcentu: #000000;
+    --barva-tag-pozadi: #ffffff;
+    --barva-tag-textu: #000000;
+    --barva-casovy: #000000;
+    --barva-ukazatel-pozadi: #ffffff;
+    --barva-ukazatel-vypln: #000000;
   }
 
   body { background-image: none; }
@@ -347,11 +825,20 @@ section { margin-block: 2rem 3rem; }
   }
 
   .karta,
+  .brainrot-panel,
+  .brainrot-obrazek,
   .tlacitko,
   .citace,
   .avatar,
   .tabulka th,
-  .tabulka td {
+  .tabulka td,
+  .skip-link,
+  .uvod,
+  .statistiky > div,
+  .postup li,
+  .kontakt-panel,
+  .status,
+  .tagy li {
     background-image: none;
     box-shadow: none;
     border-width: 2px;
@@ -359,10 +846,19 @@ section { margin-block: 2rem 3rem; }
 
   .karta { backdrop-filter: none; }
 
-  .tlacitko {
+  .tlacitko,
+  .tlacitko--sekundarni {
     background-color: #ffff00;
     color: #000000;
   }
+
+  .hero-vzor,
+  .ukazatel { display: none; }
+
+  .citace-znak,
+  .karta-cislo { opacity: 1; }
+
+  .status-bod { background-color: #000000; }
 }
 
 /* Kombinace dvou nastavení: tmavý režim a vyšší kontrast zároveň. */
@@ -378,16 +874,29 @@ section { margin-block: 2rem 3rem; }
     --barva-okraje: #ffffff;
     --barva-focus: #ffff00;
     --barva-zdrazneni: #ffff00;
+    --barva-tlacitko-textu: #000000;
     --stin-karty: none;
     --pozadi-stranky: none;
+    --barva-panelu: #000000;
+    --barva-hero: #000000;
+    --barva-akcentu: #ffff00;
+    --barva-tag-pozadi: #000000;
+    --barva-tag-textu: #ffffff;
+    --barva-casovy: #ffff00;
+    --barva-ukazatel-pozadi: #000000;
+    --barva-ukazatel-vypln: #ffff00;
   }
 
-  .tlacitko {
+  .tlacitko,
+  .tlacitko--sekundarni {
     background-color: #ffff00;
     color: #000000;
     border-color: #ffffff;
   }
+
+  .status-bod { background-color: #ffff00; }
 }
+
 /* Omezený pohyb: veškerý pohyb se vypne, obsah zůstává staticky čitelný. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -409,18 +918,26 @@ section { margin-block: 2rem 3rem; }
   .tlacitko:hover,
   .karta:hover { transform: none !important; }
 }
+
 /* Omezená průhlednost: karty dostanou plnou barvu, bez rozostření a bez průhledného pozadí. */
 @media (prefers-reduced-transparency: reduce) {
   body { background-image: none; }
 
-  .karta {
+  .karta,
+  .uvod,
+  .kontakt-panel,
+  .postup li,
+  .statistiky > div {
     background-color: var(--barva-karty);
     background-image: none;
     backdrop-filter: none;
     border-width: 2px;
     box-shadow: none;
   }
+
+  .hero-vzor { display: none; }
 }
+
 /* Vynucené barvy (Windows High Contrast): systémové barvy, viditelné okraje a fokus. */
 @media (forced-colors: active) {
   :root {
@@ -434,9 +951,17 @@ section { margin-block: 2rem 3rem; }
     --barva-okraje: CanvasText;
     --barva-focus: Highlight;
     --barva-zdrazneni: ButtonFace;
-    --barva-tlacitko-textu: CanvasText;
+    --barva-tlacitko-textu: ButtonText;
     --stin-karty: none;
     --pozadi-stranky: none;
+    --barva-panelu: Canvas;
+    --barva-hero: Canvas;
+    --barva-akcentu: LinkText;
+    --barva-tag-pozadi: Canvas;
+    --barva-tag-textu: CanvasText;
+    --barva-casovy: LinkText;
+    --barva-ukazatel-pozadi: Canvas;
+    --barva-ukazatel-vypln: Highlight;
   }
 
   body { background-image: none; }
@@ -445,16 +970,37 @@ section { margin-block: 2rem 3rem; }
   .site-footer { border-color: CanvasText; }
 
   .karta,
+  .brainrot-panel,
+  .brainrot-obrazek,
   .tlacitko,
   .citace,
   .avatar,
   .tabulka th,
   .tabulka td,
-  .skip-link {
+  .skip-link,
+  .uvod,
+  .statistiky > div,
+  .postup li,
+  .kontakt-panel,
+  .status,
+  .tagy li {
     border: 1px solid CanvasText;
     box-shadow: none;
     backdrop-filter: none;
     background-image: none;
+  }
+
+  .hero-vzor,
+  .ukazatel { display: none; }
+
+  .tlacitko {
+    background-color: ButtonFace;
+    color: ButtonText;
+    border: 2px solid CanvasText;
+  }
+
+  .brainrot-badge {
+    border: 1px solid CanvasText;
   }
 
   a {
