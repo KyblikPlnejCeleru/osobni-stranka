@@ -271,6 +271,12 @@ section { margin-block: 2rem 3rem; }
   color: var(--barva-textu-mirne);
 }
 
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
 /* Tři zlomy od nejmenšího displeje (mobile first). */
 @media (min-width: 40em) {
   html { scroll-padding-top: 6rem; }
