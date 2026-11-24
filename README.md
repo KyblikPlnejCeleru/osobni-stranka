@@ -1,12 +1,29 @@
 # Osobní stránka – potok
 
-Osobní webová stránka vytvořená jako školní projekt.
+Osobní webová stránka vytvořená jako školní projekt se zaměřením na sémantické HTML,
+CSS media rules a přístupnost podle WCAG 2.2 AA.
+
+**Nasazená verze:** <https://kyblikplnejceleru.github.io/osobni-stranka/>
 
 ## Obsah
 
-- Úvod, sekce O mně, tři projekty, přehled dovedností a kontakt.
-- Sémantické HTML, plná ovladatelnost klávesnicí a dodržení WCAG 2.2 AA.
-- Rozvržení a barvy se přizpůsobují nastavení uživatele (media rules).
+- Úvod, sekce O mně (včetně citátu o pozornosti), tři projekty s obrázky,
+  přehled dovedností v tabulce a kontakt.
+- Sémantické HTML, jediný `h1`, logická struktura nadpisů, skip link a plná
+  ovladatelnost klávesnicí.
+- Text a rozestupy v relativních jednotkách, použitelnost od nejmenšího telefonu
+  po široký monitor a při přiblížení 200 % i 400 %.
+- Podrobné vyhodnocení kritérií a nálezy jsou v [ACCESSIBILITY.md](ACCESSIBILITY.md).
+
+## Struktura repozitáře
+
+| Cesta | Obsah |
+| --- | --- |
+| `index.html` | Sémantický obsah stránky |
+| `css/style.css` | Základní styly a všech šest povinných media rules včetně kombinace |
+| `assets/img/` | Ilustrace (SVG) s popisným nebo prázdným `alt` |
+| `ACCESSIBILITY.md` | Zpráva o přístupnosti, 55 kritérií WCAG 2.2 A/AA a nálezy |
+| `.github/workflows/pages.yml` | Automatické nasazení na GitHub Pages po pushi do `main` |
 
 ## Media rules
 
@@ -20,6 +37,22 @@ Osobní webová stránka vytvořená jako školní projekt.
 | Vynucené barvy | `forced-colors: active` používá systémové barvy (Canvas, CanvasText, LinkText, Highlight) a nahrazuje stíny okraji karet, tlačítek i fokusu. |
 | Kombinace tmavý režim + vyšší kontrast | Spojená podmínka `and` nastaví černé pozadí, bílý text a žluté odkazy, aby obě nastavení fungovala zároveň. |
 
+Každé pravidlo bylo vyvíjeno ve vlastní větvi a sloučeno pull requestem; v historii
+je také vyřešený cvičný konflikt (merge commit se dvěma rodiči).
+
 ## Nasazení
 
-TODO: odkaz na GitHub Pages.
+Stránka se nasazuje automaticky po každém pushi do `main` pomocí GitHub Actions
+(`Settings → Pages → Source: GitHub Actions`). Workflow lze spustit i ručně v záložce
+Actions přes `workflow_dispatch`.
+
+## Vývoj
+
+```sh
+git clone https://github.com/KyblikPlnejCeleru/osobni-stranka.git
+cd osobni-stranka
+# otevřete index.html v prohlížeči nebo spusťte libovolný statický server
+```
+
+Před nasazením ověřte stránku v DevTools: Lighthouse (Accessibility), Rendering
+(emulace media features), klávesnici a přiblížení 200/400 %.
