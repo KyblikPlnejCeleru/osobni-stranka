@@ -7,12 +7,13 @@ CSS media rules a přístupnost podle WCAG 2.2 AA.
 
 ## Obsah
 
-- Úvod, sekce O mně (včetně citátu o pozornosti), tři projekty s obrázky,
-  přehled dovedností v tabulce a kontakt.
+- Výrazný hero panel se statistikami, sekce O mně (včetně citátu o pozornosti),
+  „Jak pracuji“, tři projekty s obrázky, dovednosti v tabulce, deník dovedností,
+  brainrot bonus se vlastní ilustrací Tung Tung Tung Sahur a kontakt.
 - Sémantické HTML, jediný `h1`, logická struktura nadpisů, skip link a plná
   ovladatelnost klávesnicí.
 - Text a rozestupy v relativních jednotkách, použitelnost od nejmenšího telefonu
-  po široký monitor a při přiblížení 200 % i 400 %.
+  po široký monitor a při kořenovém písmu 16/32/64 px (200 % a zátěžový test).
 - Podrobné vyhodnocení kritérií a nálezy jsou v [ACCESSIBILITY.md](ACCESSIBILITY.md).
 
 ## Struktura repozitáře
@@ -21,7 +22,7 @@ CSS media rules a přístupnost podle WCAG 2.2 AA.
 | --- | --- |
 | `index.html` | Sémantický obsah stránky |
 | `css/style.css` | Základní styly a všech šest povinných media rules včetně kombinace |
-| `assets/img/` | Ilustrace (SVG) s popisným nebo prázdným `alt` |
+| `assets/img/` | Ilustrace (SVG) s popisným nebo prázdným `alt`, včetně vlastního Tung Tung Tung Sahur |
 | `ACCESSIBILITY.md` | Zpráva o přístupnosti, 55 kritérií WCAG 2.2 A/AA a nálezy |
 | `.github/workflows/pages.yml` | Automatické nasazení na GitHub Pages po pushi do `main` |
 
@@ -29,7 +30,7 @@ CSS media rules a přístupnost podle WCAG 2.2 AA.
 
 | Pravilo | Co se mění a proč |
 | --- | --- |
-| Šířka okna | Tři zlomy (40/60/80 em) mění navigaci ze sloupce na řádek a rozvržení karet i sekce O mně, aby se stránka vešla od telefonu po široký monitor bez vodorovného posuvníku. |
+| Šířka okna | Tři zlomy (40/60/80 em) mění navigaci ze sloupce na řádek; hero, sekce O mně, karty, kontakt i brainrot panel používají `flex-wrap`, takže se při velkém textu samy složí do jednoho sloupce bez vodorovného posuvníku. |
 | Tmavý režim | `prefers-color-scheme` přepíná CSS proměnné, `color-scheme` a barvy posuvníků, aby text i ovládací prvky měly v obou schématech dostatečný kontrast. |
 | Vyšší kontrast | `prefers-contrast: more` zvyšuje kontrast textu na AAA, zesiluje okraje, podtrhuje odkazy a odebírá přechody a obrázky za textem. |
 | Omezený pohyb | `prefers-reduced-motion: reduce` vypne plynulé scrollování, animaci karet i přechody odkazů; žádná informace není sdílena jen pohybem. |
