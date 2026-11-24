@@ -97,9 +97,6 @@ img {
 .skip-link:focus { top: 0; }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   background-color: var(--barva-pozadi);
   border-bottom: 1px solid var(--barva-okraje);
 }

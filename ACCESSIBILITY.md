@@ -15,8 +15,13 @@ bylo ve verzi 2.2 odstraněno, proto se nevyhodnocuje).
 - **WAVE** (online report): finální stav **0 Errors, 0 Contrast Errors, 0 Alerts**.
   Původní alert „Possible heading“ u loga byl opraven (viz nález 5); zbylé
   informativní položky jsou seznamy funkcí a strukturálních prvků, nikoli chyby.
-- **Ruční kontrola**: klávesnice (Tab, Shift+Tab, Enter), pořadí fokusu, viditelnost
-  fokusu, skip link a přiblížení 200 % a 400 %. Jednotlivé `@media` bloky
+- **Klávesnice**: reálně stisknuty Tab, Shift+Tab a Enter. Pořadí fokusu: skip link
+  → logo → 4 položky navigace → CTA → 3 odkazy na projekty → e-mail → GitHub
+  → odkazy v patičce. Fokus má viditelný 3px outline; skip link se po Enteru
+  zaostří na `<main>` (viz nález 6).
+- **Přiblížení a media rules**: zvětšení textu na 200 % ověřeno bez vodorovného
+  posuvníku a bez zakrytí fokusu; zátěžový test 400 % vedl k odebrání lepivé
+  hlavičky (viz nález 7). Jednotlivé `@media` bloky
   (`prefers-color-scheme`, `prefers-contrast`, `prefers-reduced-motion`,
   `prefers-reduced-transparency`, `forced-colors` i jejich kombinace) byly
   ověřeny kontrolou deklarací a výpočtem kontrastu; postup přímé emulace
@@ -65,14 +70,14 @@ stavu *Nesplněno*.
 | 2.2.1 Timing Adjustable | A | Nevztahuje se | Žádné časové limity. |
 | 2.2.2 Pause, Stop, Hide | A | Splněno | Animace karet trvá 400 ms jednorázově a lze ji vypnout přes `prefers-reduced-motion`. |
 | 2.3.1 Three Flashes or Below Threshold | A | Splněno | Žádné blikání ani záblesky. |
-| 2.4.1 Bypass Blocks | A | Splněno | Skip link „Přeskočit na hlavní obsah“ jako první prvek stránky. |
+| 2.4.1 Bypass Blocks | A | Splněno | Skip link „Přeskočit na hlavní obsah“ jako první prvek stránky; `main` má `tabindex="-1"`, takže se po aktivaci skutečně zaostří (oprava `4ad730d`). |
 | 2.4.2 Page Titled | A | Splněno | `<title>potok – student, který tvoří přístupný web</title>`. |
 | 2.4.3 Focus Order | A | Splněno | Pořadí Tab odpovídá logickému pořadí obsahu. |
 | 2.4.4 Link Purpose (In Context) | A | Splněno | Navigační i kontaktní odkazy mají výstižný text. |
 | 2.4.5 Multiple Ways | AA | Splněno | Hlavní navigace, skip link a odkazy v patičce. |
 | 2.4.6 Headings and Labels | AA | Splněno | Jeden `h1`, sekce `h2`, karty `h3`, navigace má `aria-label`. |
 | 2.4.7 Focus Visible | AA | Splněno | `:focus-visible` = 3px outline s 3px offsetem; vynucené barvy používají `Highlight`. |
-| 2.4.11 Focus Not Obscured (Minimum) | AA | Splněno | `scroll-padding-top: 12rem`/`6rem` brání zakrytí fokusu lepivou hlavičkou (oprava `46dc041`). |
+| 2.4.11 Focus Not Obscured (Minimum) | AA | Splněno | Hlavička už není lepivá a `scroll-padding-top: 12rem`/`6rem` zajišťuje odstup (opravy `46dc041`, `ad5c47b`). |
 | 2.5.1 Pointer Gestures | A | Nevztahuje se | Žádné gesta ani multitouch. |
 | 2.5.2 Pointer Cancellation | A | Splněno | Odkazy fungují standardně po uvolnění tlačítka myši, bez custom handlerů. |
 | 2.5.3 Label in Name | A | Splněno | Viditelný text odkazů je zároveň jejich přístupným názvem. |
@@ -114,3 +119,5 @@ stavu *Nesplněno*.
 | 3 | Lighthouse: `<meta name="color-scheme">` byl v kostře nastaven pouze na `light`, takže v tmavém režimu systém nebarvil nativní ovládací prvky a posuvníky správně. | `36d8e8c` |
 | 4 | Po vyřešení cvičného konfliktu zůstala barva odkazů `#3584e4` (kontrast pod 4,5:1 na bílém pozadí), což porušovalo 1.4.3. | `0c58b4f` |
 | 5 | WAVE alert „Possible heading“: text loga „potok“ byl vizuálně upraven jako nadpis, přestože jím není. Logo je nyní odkazem s přístupným názvem a střízlivějším stylem. | `2a56640` |
+| 6 | Klávesní test skip linku: po stisku Enter se změnil hash na `#hlavni`, ale `document.activeElement` zůstal `BODY`, protože `<main>` nebyl fokusovatelný. Přidán `tabindex="-1"`; nyní se zaostří `<main id="hlavni">`. | `4ad730d` |
+| 7 | Zátěžový test 400 % textu: lepivá hlavička vyrostla na 769 px a zakrývala zaostřený odkaz. Odebrán `position: sticky`; fokus už nemůže být hlavičkou překryt. | `ad5c47b` |
