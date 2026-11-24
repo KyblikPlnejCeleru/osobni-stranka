@@ -64,6 +64,7 @@ p { margin-block: 0 1rem; }
 a {
   color: var(--barva-odkazu);
   text-underline-offset: 0.2em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
 }
 
 a:visited { color: var(--barva-odkazu-navstevovane); }
@@ -376,7 +377,27 @@ section { margin-block: 2rem 3rem; }
     border-color: #ffffff;
   }
 }
-/* TODO(feature/omezeny-pohyb): prefers-reduced-motion pro animace, přechody a scroll. */
+/* Omezený pohyb: veškerý pohyb se vypne, obsah zůstává staticky čitelný. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .karta {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tlacitko:hover,
+  .karta:hover { transform: none !important; }
+}
 /* TODO(feature/pruhlednost): prefers-reduced-transparency místo průhlednosti a bluru. */
 /* TODO(feature/vynucene-barvy): forced-colors, systémové barvy, okraje a fokus. */
 /* TODO(kombinace): tmavý režim + vyšší kontrast zároveň. */
