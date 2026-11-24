@@ -245,7 +245,51 @@ section { margin-block: 2rem 3rem; }
   color: var(--barva-textu-mirne);
 }
 
-/* TODO(feature/sirka): tři zlomy, navigace se přeskupí, žádný horizontální scroll. */
+/* Tři zlomy od nejmenšího displeje (mobile first). */
+@media (min-width: 40em) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 0.25rem;
+  }
+
+  .o-mne-obsah {
+    grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .avatar { width: 100%; }
+
+  .karty { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 60em) {
+  .site-header,
+  main,
+  .site-footer {
+    padding-inline: 2rem;
+  }
+
+  .karty { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 80em) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.75rem; }
+
+  .site-header,
+  main,
+  .site-footer {
+    padding-inline: 3rem;
+  }
+}
 /* TODO(feature/tmavy-rezim): prefers-color-scheme + color-scheme + proměnné. */
 /* TODO(feature/vyssi-kontrast): prefers-contrast, AAA kontrast, podtržené odkazy. */
 /* TODO(feature/omezeny-pohyb): prefers-reduced-motion pro animace, přechody a scroll. */
