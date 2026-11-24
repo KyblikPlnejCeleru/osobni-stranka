@@ -13,6 +13,25 @@
   --barva-zdrazneni: #ffb703;
   --stin-karty: 0 0.25rem 1rem rgb(27 27 27 / 12%);
   --pozadi-stranky: linear-gradient(180deg, #f3f7fc 0, #ffffff 38rem);
+  scrollbar-color: var(--barva-okraje) var(--barva-pozadi);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --barva-pozadi: #12161c;
+    --barva-textu: #f5f7fa;
+    --barva-textu-mirne: #d6dde6;
+    --barva-odkazu: #9ecbff;
+    --barva-odkazu-navstevovane: #d0b3ff;
+    --barva-karty: #1c232d;
+    --barva-karty-pruhledna: rgb(28 35 45 / 92%);
+    --barva-okraje: #a0aab5;
+    --barva-focus: #ffd166;
+    --barva-zdrazneni: #ffd166;
+    --stin-karty: 0 0.25rem 1rem rgb(0 0 0 / 50%);
+    --pozadi-stranky: linear-gradient(180deg, #0e1217 0, #12161c 38rem);
+  }
 }
 
 *,
