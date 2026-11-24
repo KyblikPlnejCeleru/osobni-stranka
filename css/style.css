@@ -654,6 +654,115 @@ section { margin-block: 3rem 4rem; }
   box-shadow: var(--stin-karty);
 }
 
+/* Časté otázky */
+.faq {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.faq-polozka {
+  padding: 0.25rem 1rem;
+  background-color: var(--barva-panelu);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 0.75rem;
+}
+
+.faq-polozka summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+  padding-block: 0.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  overflow-wrap: anywhere;
+}
+
+.faq-polozka summary::-webkit-details-marker { display: none; }
+
+.faq-polozka summary::before {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: var(--barva-akcentu);
+  color: var(--barva-pozadi);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.faq-polozka[open] summary::before { content: "−"; }
+
+.faq-polozka p {
+  margin: 0 0 1rem 2.35rem;
+  overflow-wrap: anywhere;
+}
+
+/* Auditní razítka */
+.audity-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background-color: var(--barva-hero);
+  border: 2px solid var(--barva-okraje);
+  border-radius: 1.25rem;
+  box-shadow: var(--stin-karty);
+}
+
+.audity-text {
+  flex: 1 1 18rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.audity-mrize {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: 0.75rem;
+  flex: 1 1 22rem;
+  margin: 0;
+  min-width: 0;
+}
+
+.audity-mrize > div {
+  padding: 0.85rem;
+  background-color: var(--barva-karty);
+  border: 1px solid var(--barva-okraje);
+  border-radius: 0.75rem;
+}
+
+.audity-mrize dt {
+  color: var(--barva-textu-mirne);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.audity-mrize dd {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.audity-mrize dd strong {
+  display: block;
+  color: var(--barva-akcentu);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.audity-mrize dd span {
+  display: block;
+  color: var(--barva-textu-mirne);
+  font-size: 0.85rem;
+}
+
 /* Kontakt */
 .kontakt-panel {
   display: flex;
@@ -829,6 +938,9 @@ section { margin-block: 3rem 4rem; }
   .karta,
   .brainrot-panel,
   .brainrot-obrazek,
+  .faq-polozka,
+  .audity-panel,
+  .audity-mrize > div,
   .tlacitko,
   .citace,
   .avatar,
@@ -974,6 +1086,9 @@ section { margin-block: 3rem 4rem; }
   .karta,
   .brainrot-panel,
   .brainrot-obrazek,
+  .faq-polozka,
+  .audity-panel,
+  .audity-mrize > div,
   .tlacitko,
   .citace,
   .avatar,
@@ -1015,5 +1130,63 @@ section { margin-block: 3rem 4rem; }
   :focus-visible {
     outline: 3px solid Highlight;
     outline-offset: 3px;
+  }
+}
+
+/* Bonus: tisková verze – obsah zůstává, dekorace a ovládání mizí. */
+@media print {
+  :root {
+    --barva-pozadi: #ffffff;
+    --barva-textu: #000000;
+    --barva-textu-mirne: #000000;
+    --barva-odkazu: #000000;
+    --barva-odkazu-navstevovane: #000000;
+    --barva-karty: #ffffff;
+    --barva-okraje: #000000;
+    --barva-akcentu: #000000;
+    --stin-karty: none;
+    --pozadi-stranky: none;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 11pt;
+  }
+
+  .skip-link,
+  .site-header,
+  .hero-akce,
+  .tlacitko,
+  .hero-vzor,
+  .brainrot-obrazek,
+  .site-footer a,
+  .faq-polozka summary::before {
+    display: none !important;
+  }
+
+  .uvod,
+  .karta,
+  .citace,
+  .kontakt-panel,
+  .brainrot-panel,
+  .audity-panel,
+  .faq-polozka,
+  .audity-mrize > div,
+  .postup li,
+  .statistiky > div {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border-color: #000000 !important;
+    box-shadow: none !important;
+  }
+
+  section { break-inside: avoid; margin-block: 0.75rem; }
+
+  details > *:not(summary) { display: block !important; }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
   }
 }
