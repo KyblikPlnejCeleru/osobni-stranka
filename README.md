@@ -9,7 +9,10 @@ CSS media rules a přístupnost podle WCAG 2.2 AA.
 
 - Výrazný hero panel se statistikami, sekce O mně (včetně citátu o pozornosti),
   „Jak pracuji“, tři projekty s obrázky, dovednosti v tabulce, deník dovedností,
-  brainrot bonus se vlastní ilustrací Tung Tung Tung Sahur a kontakt.
+  brainrot bonus se vlastní ilustrací Tung Tung Tung Sahur, nativní FAQ
+  (`details`/`summary`), auditní razítka a kontakt.
+- Tiskový styl (`@media print`) odstraní navigaci, tlačítka a dekorace, ale zachová
+  veškerý text, nadpisy, tabulku, odkazy a rozbalené odpovědi FAQ.
 - Sémantické HTML, jediný `h1`, logická struktura nadpisů, skip link a plná
   ovladatelnost klávesnicí.
 - Text a rozestupy v relativních jednotkách, použitelnost od nejmenšího telefonu
@@ -37,6 +40,7 @@ CSS media rules a přístupnost podle WCAG 2.2 AA.
 | Průhlednost | `prefers-reduced-transparency: reduce` nahrazuje průhledná pozadí karet a rozostření plnými barvami a výraznějším okrajem. |
 | Vynucené barvy | `forced-colors: active` používá systémové barvy (Canvas, CanvasText, LinkText, Highlight) a nahrazuje stíny okraji karet, tlačítek i fokusu. |
 | Kombinace tmavý režim + vyšší kontrast | Spojená podmínka `and` nastaví černé pozadí, bílý text a žluté odkazy, aby obě nastavení fungovala zároveň. |
+| Tisk | `@media print` přepne na černobílý kontrastní výstup, skryje ovládání a dekorace a zobrazí i odpovědi FAQ; stránka se tiskne bez zbytečného pozadí. |
 
 Každé pravidlo bylo vyvíjeno ve vlastní větvi a sloučeno pull requestem; v historii
 je také vyřešený cvičný konflikt (merge commit se dvěma rodiči).
@@ -71,4 +75,5 @@ cd osobni-stranka
 ```
 
 Před nasazením ověřte stránku v DevTools: Lighthouse (Accessibility), Rendering
-(emulace media features), klávesnici a přiblížení 200/400 %.
+(emulace media features), klávesnici včetně rozbalování FAQ klávesem Enter,
+přiblížení 200/400 % a náhled tisku (`Ctrl+P`).
